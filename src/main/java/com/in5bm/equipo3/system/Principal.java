@@ -1,5 +1,5 @@
 
-package com.equipo3.system;
+package com.in5bm.equipo3.system;
 
 /**
  *

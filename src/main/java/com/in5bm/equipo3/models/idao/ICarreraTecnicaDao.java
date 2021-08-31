@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.equipo3.models.idao;
+package com.in5bm.equipo3.models.idao;
 
 import com.equipo3.models.domain.*;
 import java.util.List;

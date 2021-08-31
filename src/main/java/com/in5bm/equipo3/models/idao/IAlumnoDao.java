@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.equipo3.models.idao;
+package com.in5bm.equipo3.models.idao;
 
 import com.equipo3.models.domain.*;
 import java.util.List;
@@ -12,12 +12,12 @@ import java.util.List;
  *
  * @author Brandon Andree Palma Hernandez
  */
-public interface IHorarioDao {
+public interface IAlumnoDao {
     
-    public List<Horario> listar();
-    public Horario encontrar(Horario horario);
-    public int insertar(Horario horario);
-    public int actualizar(Horario horario);
-    public int eliminar(Horario horario);
+    public List<Alumno> listar();
+    public Alumno encontrar(Alumno alumno);
+    public int insertar(Alumno alumno);
+    public int actualizar(Alumno alumno);
+    public int eliminar(Alumno alumno);
     
 }

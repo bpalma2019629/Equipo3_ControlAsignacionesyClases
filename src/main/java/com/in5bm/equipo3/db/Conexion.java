@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.equipo3.db;
+package com.in5bm.equipo3.db;
 
 import java.sql.*;
 import javax.sql.DataSource;
