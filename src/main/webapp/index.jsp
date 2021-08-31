@@ -13,5 +13,7 @@
     </head>
     <body>
         <h1>Pagina Principal</h1>
+        
+        <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listado de salones.</a>"
     </body>
 </html>
