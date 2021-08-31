@@ -62,7 +62,7 @@ public class ServletSalonController extends HttpServlet {
         Salon salon = new Salon(salonId);
 
         int registrosEliminados = new SalonDaoImpl().eliminar(salon);
-
+        
         listarSalones(request, response);
 
     }

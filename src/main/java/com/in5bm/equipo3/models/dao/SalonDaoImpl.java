@@ -84,7 +84,10 @@ public class SalonDaoImpl implements ISalonDao{
             System.out.println(pstmt.toString());
             variable=pstmt.executeUpdate();
         } catch (SQLException e) {
-        e.printStackTrace(System.out);
+            if(e.getErrorCode()==1451){
+                System.out.println("El salon a eliminar puede estar asignado a un curso."
+                        + "\nElimine el curso seleccionado ");
+            }
         }finally{
         Conexion.close(pstmt);
         Conexion.close(conn);

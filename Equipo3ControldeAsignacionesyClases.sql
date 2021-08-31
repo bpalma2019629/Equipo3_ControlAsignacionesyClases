@@ -1,7 +1,6 @@
 create database if not exists Equipo3_Control_de_Asignaciones_y_Clases;
 use Equipo3_Control_de_Asignaciones_y_Clases;
 
-
 -- ----------------------------------------------
 -- Tabla instructor
 -- ----------------------------------------------
@@ -30,7 +29,6 @@ create table if not exists salon(
   nombre_salon varchar(255),
   PRIMARY KEY (salon_id)
 );
-
 
 insert into salon (capacidad,descripcion,nombre_salon)
 values(35,"Salon de Biologia","A-0001");
