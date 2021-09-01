@@ -30,6 +30,22 @@ create table if not exists salon(
   PRIMARY KEY (salon_id)
 );
 
+-- ----------------------------------------------
+-- Tabla horario
+-- ----------------------------------------------
+
+
+
+-- ----------------------------------------------
+-- Tabla curso
+-- ----------------------------------------------
+
+
+
+-- ----------------------------------------------
+-- Registros
+-- ----------------------------------------------
+
 insert into salon (capacidad,descripcion,nombre_salon)
 values(35,"Salon de Biologia","A-0001");
 
@@ -58,6 +74,7 @@ insert into salon (capacidad,descripcion,nombre_salon)
 values(90,"Salon de Teatro","A-0009");
 
 insert into salon (capacidad,descripcion,nombre_salon)
+<<<<<<< HEAD
 values(25,"Direccion","A-0010");
 
 
@@ -80,3 +97,6 @@ values(25,"Direccion","A-0010");
 
 
 
+=======
+values(25,"Direccion","A-0010");
+>>>>>>> kenneth
