@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.in5bm.equipo3.models.idao;
+package com.equipo3.models.idao;
 
-import com.equipo3.models.domain.*;
+import com.equipo3.models.domain.Instructor;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface IInstructorDao {
     
-     public List<Instructor> listar();
+    public List<Instructor> listar();
     public Instructor encontrar(Instructor instructor);
     public int insertar(Instructor instructor);
     public int actualizar(Instructor instructor);
