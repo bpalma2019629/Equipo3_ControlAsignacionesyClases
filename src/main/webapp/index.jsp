@@ -13,7 +13,11 @@
     </head>
     <body>
         <h1>Pagina Principal</h1>
+<<<<<<< HEAD
         
         <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listado de salones.</a>"
+=======
+        <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">ListarHorario</a>
+>>>>>>> erick
     </body>
 </html>

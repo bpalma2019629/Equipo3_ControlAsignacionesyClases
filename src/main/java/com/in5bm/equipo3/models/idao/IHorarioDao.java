@@ -5,19 +5,19 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.equipo3.models.domain.*;
+import com.in5bm.equipo3.models.domain.*;
 import java.util.List;
 
 /**
  *
  * @author Brandon Andree Palma Hernandez
  */
-public interface ISalonDao {
+public interface IHorarioDao {
     
-    public List<Salon> listar();
-    public Salon encontrar(Salon salon);
-    public int insertar(Salon salon);
-    public int actualizar(Salon salon);
-    public int eliminar(Salon salon);
+    public List<Horario> listar();
+    public Horario encontrar(Horario horario);
+    public int insertar(Horario horario);
+    public int actualizar(Horario horario);
+    public int eliminar(Horario horario);
     
 }
