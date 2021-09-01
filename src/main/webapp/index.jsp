@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Pagina Principal</h1>
+        <h1>Bienvenidos</h1>
+        <a href="${pageContext.request.contextPath}/ServletEstudianteController?accion=listar">Listar Estudiantes</a>
     </body>
 </html>
