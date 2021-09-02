@@ -28,6 +28,16 @@ INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Orella
 -- ----------------------------------------------
 -- Tabla alumnos
 -- ----------------------------------------------
+<<<<<<< HEAD
+=======
+CREATE TABLE alumno (
+  carne varchar(16) not null auto_increment,
+  nombres VARCHAR(45),
+  apellidos VARCHAR(45),
+  email VARCHAR(32),
+  PRIMARY KEY (carne)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+>>>>>>> 42024507ebfa97a2913cda2355c2e0ae30146345
 
 
 
@@ -81,6 +91,7 @@ create table if not exists salon(
 insert into salon (capacidad,descripcion,nombre_salon)
 values(35,"Salon de Biologia","A-0001");
 
+<<<<<<< HEAD
 insert into salon (capacidad,descripcion,nombre_salon)
 values(35,"Salon de Quimica","A-0002");
 
@@ -127,6 +138,27 @@ values(25,"Direccion","A-0010");
 -- Tabla asignacion_alumno
 -- ----------------------------------------------
 
+=======
+INSERT INTO alumno  (nombres, apellidos, email) VALUES ('carlos', 'Pérez', 'Carlosgarc@kinal.edu.gt');
+
+INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Karyn ', 'Gutierrez', 'karyg@kinal.edu.gt');
+
+INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Xavier ', 'Garcia ', 'garciaxavier068@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Jonathan ', 'Fernandez', 'Fernajona@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('David', 'Herrera', 'herredav@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Andres', 'Palma', 'palmandr@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('karol ', 'ordoñez', 'kaarolordo@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Carla', 'Rodrigez', 'rodriguescar@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Alex', 'Diaz', 'aledia@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('nando', 'moran', 'morannd@kinal.edu.gt');
+>>>>>>> 42024507ebfa97a2913cda2355c2e0ae30146345
 
 
 =======
