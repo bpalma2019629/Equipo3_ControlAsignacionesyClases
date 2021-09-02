@@ -12,10 +12,10 @@ use Equipo3_Control_de_Asignaciones_y_Clases;
 -- Tabla alumnos
 -- ----------------------------------------------
 CREATE TABLE alumno (
-  carne INT NOT NULL AUTO_INCREMENT,
+  carne varchar(16) not null auto_increment,
   nombres VARCHAR(45),
   apellidos VARCHAR(45),
-  email VARCHAR(45),
+  email VARCHAR(32),
   PRIMARY KEY (carne)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
