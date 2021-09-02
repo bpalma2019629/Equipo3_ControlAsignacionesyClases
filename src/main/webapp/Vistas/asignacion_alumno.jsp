@@ -10,22 +10,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado de Asignacion de alumno</title>
+        <title>Listado de Asignación de alumno</title>
     </head>
     <body>
-        <h1>Listado de Asignacion de alumno</h1>
+        <h1>Listado de Asignación de Alumno</h1>
         <table border="1">
             <thead>
                 <tr>
-                    <th>asignacion</th>
+                    <th>ID</th>
                     <th>Fecha de asignación</th>
-                    <th>Carne</th>
+                    <th>Carné</th>
                     <th>Nombre completo</th>
-                    <th>email</th>
+                    <th>Email</th>
                     <th>Curso</th>
-                    <th>ciclo</th>
-                    <th>cupo maximo</th>
-                    <th>cupo minimo</th>
+                    <th>Ciclo</th>
+                    <th>cupo máximo</th>
+                    <th>cupo mínimo</th>
                     <th></th>
                 </tr>
             </thead>

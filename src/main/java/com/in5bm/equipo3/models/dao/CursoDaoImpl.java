@@ -60,7 +60,7 @@ public class CursoDaoImpl implements ICursoDao{
                 int instructorId = rs.getInt("instructor_id");
                 String nombres = rs.getString("nombres");
                 int salonId = rs.getInt("salon_id");
-                String descripcionSalon = rs.getString("descripcion");
+                String descripcionSalon = rs.getString("salon.descripcion");
                 
                 curso = new Curso(cursoId, ciclo, cupoMaximo, cupoMinimo, descripcion, codigoCarrera, nombre, horarioId, horaFinal, horaInicio, instructorId, nombres, salonId, descripcionSalon);
                 listaCursos.add(curso);

@@ -38,16 +38,16 @@ CREATE TABLE alumno (
   PRIMARY KEY (carne)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021001,'Pérez','carlos','Carlosgarc@kinal.edu.gt');
-INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021002,'Gutierrez','Karyn ', 'karyg@kinal.edu.gt');
-INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021003,'Garcia ','Xavier ', 'garciaxavier068@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021004, 'Fernandez','Jonathan ', 'Fernajona@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021005,'Herrera','David', 'herredav@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021006,'Palma','Andres', 'palmandr@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021007, 'ordoñez', 'karol ','kaarolordo@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021008,'Rodrigez','Carla', 'rodriguescar@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021009,'Diaz','Alex', 'aledia@kinal.edu.gt');
-INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021010,'moran','nando', 'morannd@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021020,'Pérez','Carlos','carlosgarc@kinal.edu.gt');
+INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021150,'Gutierrez','Karyn', 'karyg@kinal.edu.gt');
+INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021225,'Garcia ','Xavier', 'garciaxavier068@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021365, 'Fernandez','Jonathan', 'Fernajona@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021065,'Herrera','David', 'herredav@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021629,'Palma','Andree', 'palmandr@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021175, 'Ordoñez', 'Karol','kaarolordo@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021512,'Rodrigez','Carla', 'rodriguescar@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021086,'Diaz','Alex', 'aledia@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021297,'Moran','Nando', 'morannd@kinal.edu.gt');
 
 
 -- ----------------------------------------------
@@ -83,25 +83,25 @@ create table if not exists salon(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Biologia","A-0001");
+values(35,"Salón de Dibujo","A-0001");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Quimica","A-0002");
+values(35,"Salón de Electrónica en Computación","A-0002");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Matematica","A-0003");
+values(40,"Salón de Electrónica Industrial","A-0003");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(50,"Salon de Musica","A-0004");
+values(50,"Salón de Electricidad","A-0004");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Fisica Fundamental","A-0005");
+values(40,"Salón de Informatica","A-0005");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Ingles","A-0006");
+values(35,"Salón de Mecánica","A-0006");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Computacion","A-0007");
+values(40,"Salón de Mecatrónica","A-0007");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(50,"Salon de Pintura","A-0008");
+values(50,"Salón de Sonido y Música","A-0008");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(90,"Salon de Teatro","A-0009");
+values(90,"Salón de Telecomunicacione","A-0009");
 insert into salon (capacidad,descripcion,nombre_salon)
-values(25,"Direccion","A-0010");
+values(25,"Salón de Topografía","A-0010");
 
 
 -- ----------------------------------------------
@@ -114,16 +114,16 @@ CREATE TABLE IF NOT EXISTS horario (
     PRIMARY KEY(horario_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-insert into horario (horario_final, horario_inicio) values ('7:30:00', '8:30:00');
-insert into horario (horario_final, horario_inicio) values ('8:30:00', '9:30:00');
-insert into horario (horario_final, horario_inicio) values ('9:30:00', '10:30:00');
-insert into horario (horario_final, horario_inicio) values ('10:30:00', '11:30:00');
-insert into horario (horario_final, horario_inicio) values ('11:30:00', '12:30:00');
-insert into horario (horario_final, horario_inicio) values ('1:30:00', '2:30:00');
-insert into horario (horario_final, horario_inicio) values ('2:30:00', '3:30:00');
-insert into horario (horario_final, horario_inicio) values ('3:30:00', '4:30:00');
-insert into horario (horario_final, horario_inicio) values ('4:30:00', '5:30:00');
-insert into horario (horario_final, horario_inicio) values ('5:30:00', '6:30:00');
+insert into horario (horario_inicio, horario_final) values ('7:30:00', '8:30:00');
+insert into horario (horario_inicio, horario_final) values ('8:30:00', '9:30:00');
+insert into horario (horario_inicio, horario_final) values ('9:30:00', '10:30:00');
+insert into horario (horario_inicio, horario_final) values ('10:30:00', '11:30:00');
+insert into horario (horario_inicio, horario_final) values ('11:30:00', '12:30:00');
+insert into horario (horario_inicio, horario_final) values ('1:30:00', '2:30:00');
+insert into horario (horario_inicio, horario_final) values ('2:30:00', '3:30:00');
+insert into horario (horario_inicio, horario_final) values ('3:30:00', '4:30:00');
+insert into horario (horario_inicio, horario_final) values ('4:30:00', '5:30:00');
+insert into horario (horario_inicio, horario_final) values ('5:30:00', '6:30:00');
 
 
 -- ----------------------------------------------
@@ -157,16 +157,16 @@ CREATE TABLE IF NOT EXISTS curso (
         REFERENCES salon (salon_id)
 		on delete cascade on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '3', 'Programacion', 'CTIN', '1', '1', '1'); 
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '4', 'Reparacion de morores ', 'CTMC', '2', '4', '7');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '40', '10', 'Mantenimiento de computadoras', 'CTEC', '3', '7', '3');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '25', '10', 'Circuitos', 'CTEI', '4', '3', '2');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '35', '5', 'Mecatronica I', 'CTMT', '5', '5', '3');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '20', '5', 'Topografia I', 'CTTG', '6', '6', '10');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '22', '7', 'Telecomunicaciones I', 'CTTC', '7', '8', '5');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '26', '10', 'Plantas y planos I', 'CTDT', '8', '6', '4');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '30', '15', 'Instalaciones Electricas I', 'CTEL', '9', '9', '8');
-INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '20', '2', 'Solfeo y entonacion I', 'CTSN', '10', '10', '2');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '3', 'Programación', 'CTIN', '1', '1', '5'); 
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '4', 'Reparación de motores ', 'CTMC', '2', '4', '6');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '40', '10', 'Mantenimiento de computadoras', 'CTEC', '3', '7', '2');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '25', '10', 'Circuitos', 'CTEI', '4', '3', '3');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '35', '5', 'Mecatrónica I', 'CTMT', '5', '5', '7');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '5', 'Topografía I', 'CTTG', '6', '6', '10');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '22', '7', 'Telecomunicaciones I', 'CTTC', '7', '8', '9');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '26', '10', 'Plantas y planos I', 'CTDT', '8', '6', '1');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '30', '15', 'Instalaciones Eléctricas I', 'CTEL', '9', '9', '4');
+INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '2', 'Solfeo y entonación I', 'CTSN', '10', '10', '8');
 
 -- ----------------------------------------------
 -- Tabla asignacion_alumno
@@ -189,24 +189,24 @@ CREATE TABLE IF NOT EXISTS asignacion_alumno(
     on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-12', '2021-01-1 12:00:00', '2021001', 1);
+  value('A-12', '2021-01-1 12:00:00', '2021225', 1);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-13', '2021-02-2 1:00:00', '2021002', 2);
+  value('A-13', '2020-01-3 1:00:00', '2021020', 2);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-14', '2021-03-3 2:00:00', '2021003', 3);
+  value('A-14', '2021-01-6 2:00:00', '2021629', 3);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-15', '2021-04-4 3:00:00', '2021004', 4);
+  value('A-15', '2021-01-10 3:00:00', '2021086', 4);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-16', '2021-05-5 4:00:00', '2021005', 5);
+  value('A-16', '2020-07-24 4:00:00', '2021175', 5);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-17', '2021-06-6 5:00:00', '2021006', 6);
+  value('A-17', '2020-06-26 5:00:00', '2021365', 6);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-18', '2021-07-7 6:00:00', '2021007', 7);
+  value('A-18', '2020-07-28 6:00:00', '2021297', 7);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-19', '2021-08-8 7:00:00', '2021008', 8);
+  value('A-19', '2020-08-15 7:00:00', '2021065', 8);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-20', '2021-09-9 8:00:00', '2021009', 9);
+  value('A-20', '2020-09-24 8:00:00', '2021512', 9);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
-  value('A-21', '2021-10-10 9:00:00', '2021010', 10);
+  value('A-21', '2020-10-11 9:00:00', '2021150', 10);
   
 
