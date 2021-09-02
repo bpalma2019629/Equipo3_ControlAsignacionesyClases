@@ -142,17 +142,20 @@ CREATE TABLE IF NOT EXISTS curso (
     PRIMARY KEY (curso_id),
     CONSTRAINT FK_curso_carrera_tecnica
 		FOREIGN KEY (codigo_carrera)
-        REFERENCES carrera_tecnica (codigo_carrera),
+        REFERENCES carrera_tecnica (codigo_carrera)
+        on delete cascade on update cascade,
 	CONSTRAINT FK_curso_horario
 		FOREIGN KEY (horario_id)
-        REFERENCES horario (horario_id),
+        REFERENCES horario (horario_id)
+        on delete cascade on update cascade,
 	CONSTRAINT FK_curso_instructor
 		FOREIGN KEY (instructor_id)
-        REFERENCES instructor (instructor_id),
+        REFERENCES instructor (instructor_id)
+        on delete cascade on update cascade,
 	CONSTRAINT FK_curso_salon
 		FOREIGN KEY (salon_id)
         REFERENCES salon (salon_id)
-on delete cascade on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+		on delete cascade on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '3', 'Programacion', 'CTIN', '1', '1', '1'); 
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '4', 'Reparacion de morores ', 'CTMC', '2', '4', '7');
