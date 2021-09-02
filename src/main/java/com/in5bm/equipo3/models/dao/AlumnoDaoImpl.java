@@ -23,13 +23,13 @@ import java.util.List;
  */
 public class AlumnoDaoImpl implements IAlumnoDao{
 
-    private static final String SQL_SELECT ="SELECT carne, nombres, apellidos, email,  FROM alumno";
+    private static final String SQL_SELECT ="SELECT carne, nombres, apellidos, email  FROM alumno";
     private static final String SQL_DELETE="DELETE FROM alumno where carne = ?";
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     private ResultSet rs = null;
     private Alumno alumno= null;
-    List<Alumno> alumnos = new ArrayList<>();
+    List<Alumno> listaAlumnos = new ArrayList<>();
     
     @Override
     public List<Alumno> listar() {
@@ -38,13 +38,13 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             pstmt = conn.prepareStatement(SQL_SELECT);
             rs = pstmt.executeQuery();
             while(rs.next()){
-                int idEstudiante = rs.getInt("carne");
-                String nombre = rs.getString("nombres");
+                String carne = rs.getString("carne");
                 String apellido = rs.getString("apellidos");
+                String nombre = rs.getString("nombres");
                 String email = rs.getString("email");
               
-                alumno = new Alumno(idEstudiante,nombre,apellido,email);
-                alumnos.add(alumno);
+                alumno = new Alumno(carne, apellido, nombre, email);
+                listaAlumnos.add(alumno);
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             Conexion.close(pstmt);
             Conexion.close(conn);
         }
-        return alumnos;
+        return listaAlumnos;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class AlumnoDaoImpl implements IAlumnoDao{
       try{
           conn = Conexion.getConnection();
           pstmt = conn.prepareStatement(SQL_DELETE);
-          pstmt.setInt(1, alumno.getCarne());
+          pstmt.setString(1, alumno.getCarne());
           System.out.println(pstmt.toString());
           rows = pstmt.executeUpdate();
       }catch(SQLException ex){

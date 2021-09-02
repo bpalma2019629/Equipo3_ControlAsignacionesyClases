@@ -13,7 +13,7 @@
         <title>Listado Horario</title>
     </head>
     <body>
-        <h1>Horario</h1>
+        <h1>Listado Horario</h1>
         <table border="1">
             <thead>
                 <tr>

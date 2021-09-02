@@ -14,11 +14,7 @@
     <body>
         <h1>Pagina Principal</h1>
         
-        <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listado de salones.</a><br
-        <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">ListarHorario</a>
-        <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar carreras tecnicas</a>
-        <a href="${pageContext.request.contextPath}/ServletInstructorController?accion=listar">Listar instructores</a>
-        <a href="${pageContext.request.contextPath}/ServletEstudianteController?accion=listar">Listar Estudiantes</a>
+        <a href="${pageContext.request.contextPath}/ServletAlumnoController?accion=listar">Listar Alumno</a><br>
         <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listar salones</a><br>
         <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">Listar horarios</a><br>
         <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar carreras tecnicas</a><br>

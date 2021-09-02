@@ -57,6 +57,7 @@ public class ServletHorarioController extends HttpServlet{
         int idHorario = Integer.parseInt(request.getParameter("idHorario"));
         Horario horario = new Horario(idHorario);
         int registrosEliminados = new HorarioDaoImpl().eliminar(horario);
+        System.out.println("Cantidad de registros eliminados: "+ registrosEliminados);
         listarHorario(request,response);
         
         
@@ -68,7 +69,7 @@ public class ServletHorarioController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoHorario", listaHorario);
-        response.sendRedirect("horario.jsp");
+        response.sendRedirect("Vistas/horario.jsp");
         
         
     }

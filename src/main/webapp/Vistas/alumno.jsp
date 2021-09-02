@@ -12,22 +12,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado Estudiantes</title>
+        <title>Listado Alumnos</title>
     </head>
     <body>
-        <h1>Listado Estudiantes</h1>
+        <h1>Listado Alumnos</h1>
         
         <table border 1>
             <thead>
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
-             
-                <th></th>
+                <th>email</th>
             </tr>
             </thead>
             <tbody>
-                <c:forEach var="ver alumno" items="${listadoAlumno}">
+                <c:forEach var="alumno" items="${listadoAlumno}">
                     <tr>
                         <td>${alumno.carne}</td>
                         <td>${alumno.nombres}${alumno.apellidos}</td>

@@ -30,7 +30,24 @@ INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Orella
 -- ----------------------------------------------
 -- Tabla alumnos
 -- ----------------------------------------------
+CREATE TABLE alumno (
+  carne varchar(16) not null,
+  apellidos VARCHAR(45),
+  nombres VARCHAR(45),
+  email VARCHAR(32),
+  PRIMARY KEY (carne)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021001,'Pérez','carlos','Carlosgarc@kinal.edu.gt');
+INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021002,'Gutierrez','Karyn ', 'karyg@kinal.edu.gt');
+INSERT INTO alumno (carne,apellidos,nombres, email) VALUES (2021003,'Garcia ','Xavier ', 'garciaxavier068@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021004, 'Fernandez','Jonathan ', 'Fernajona@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021005,'Herrera','David', 'herredav@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021006,'Palma','Andres', 'palmandr@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021007, 'ordoñez', 'karol ','kaarolordo@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021008,'Rodrigez','Carla', 'rodriguescar@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021009,'Diaz','Alex', 'aledia@kinal.edu.gt');
+INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021010,'moran','nando', 'morannd@kinal.edu.gt');
 
 
 -- ----------------------------------------------
@@ -135,7 +152,7 @@ CREATE TABLE IF NOT EXISTS curso (
 	CONSTRAINT FK_curso_salon
 		FOREIGN KEY (salon_id)
         REFERENCES salon (salon_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+on delete cascade on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '3', 'Programacion', 'CTIN', '1', '1', '1'); 
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '4', 'Reparacion de morores ', 'CTMC', '2', '4', '7');
@@ -147,14 +164,6 @@ INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera,
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '26', '10', 'Plantas y planos I', 'CTDT', '8', '6', '4');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '30', '15', 'Instalaciones Electricas I', 'CTEL', '9', '9', '8');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '20', '2', 'Solfeo y entonacion I', 'CTSN', '10', '10', '2');
-
-SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id FROM curso;
-
-SELECT * FROM curso INNER JOIN salon ON salon.salon_id = curso.curso_id;
-
-
-
-
 
 -- ----------------------------------------------
 -- Tabla asignacion_alumno

@@ -65,12 +65,12 @@ public class ServletAlumnoController extends HttpServlet {
         sesion.setAttribute("listadoAlumno", listaAlumno);
         sesion.setAttribute("ver alumno", listaAlumno.size());
        
-        response.sendRedirect("alumno.jsp");
+        response.sendRedirect("Vistas/alumno.jsp");
 
     }
 
     private void eliminarAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int carne = Integer.parseInt(request.getParameter("carne"));
+        String carne = request.getParameter("carne");
 
         Alumno alumno = new Alumno(carne);
 

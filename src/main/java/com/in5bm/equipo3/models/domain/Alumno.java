@@ -14,9 +14,9 @@ package com.in5bm.equipo3.models.domain;
  */
 public class Alumno {
 
-    private int String;
-    private String nombres;
+    private String carne;
     private String apellidos;
+    private String nombres;
     private String email;
 
     public Alumno() {
@@ -24,49 +24,49 @@ public class Alumno {
         
     }
 
-    public Alumno(int carne) {
-        this.String = carne;
+    public Alumno(String carne) {
+        this.carne = carne;
+    }
+    
+
+    public Alumno(String apellidos, String nombres) {
+        this.apellidos = apellidos;
+        this.nombres = nombres;
     }
 
-    public Alumno(String nombres, String apellidos, String email) {
-        this.nombres = nombres;
+    public Alumno(String carne, String apellidos, String nombres, String email) {
+        this.carne = carne;
         this.apellidos = apellidos;
+        this.nombres = nombres;
         this.email = email;
     }
 
-    public Alumno(int carne, String nombres, String apellidos, String email) {
-        this.String = carne;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.email = email;
-    }
-
-    public int getCarne() {
-        return String;
-    }
-
-    public void setCarne(int carne) {
-        this.String = carne;
+    public String getCarne() {
+        return carne;
     }
 
     public String getNombres() {
         return nombres;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
     public String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
     public String getEmail() {
         return email;
+    }
+
+    public void setCarne(String carne) {
+        this.carne = carne;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public void setEmail(String email) {
@@ -75,9 +75,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "carne=" + String + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email + '}';
+        return "Alumno{" + "carne=" + carne + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email + '}';
     }
-    
-    
     
 }

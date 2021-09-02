@@ -52,7 +52,7 @@ public class ServletSalonController extends HttpServlet {
         sesion.setAttribute("listadoSalones", listaSalon);
         sesion.setAttribute("totalSalones", listaSalon.size());
 
-        response.sendRedirect("salon.jsp");
+        response.sendRedirect("Vistas/salon.jsp");
 
     }
 
@@ -62,6 +62,7 @@ public class ServletSalonController extends HttpServlet {
         Salon salon = new Salon(salonId);
 
         int registrosEliminados = new SalonDaoImpl().eliminar(salon);
+        System.out.println("Cantidad de registros eliminados: "+ registrosEliminados);
         
         listarSalones(request, response);
 

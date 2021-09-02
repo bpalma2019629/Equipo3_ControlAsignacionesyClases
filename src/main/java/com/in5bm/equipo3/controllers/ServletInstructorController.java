@@ -51,7 +51,7 @@ public class ServletInstructorController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoInstructor", listaInstructor);
-        response.sendRedirect("instructor.jsp");
+        response.sendRedirect("Vistas/instructor.jsp");
     }
     
     @Override
