@@ -1,8 +1,11 @@
-package com.equipo3.models.domain;
+package com.in5bm.equipo3.models.domain;
 
 /**
+ * 
+ * @author Juan Diego Solís Martínez
+ * @date 28/08/2021
+ * @time 10:02:11 AM
  *
- * @author 
  */
 public class CarreraTecnica {
     private String codigoCarrera;

@@ -5,7 +5,7 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.equipo3.models.domain.CarreraTecnica;
+import com.in5bm.equipo3.models.domain.CarreraTecnica;
 import java.util.List;
 
 /**

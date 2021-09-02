@@ -5,19 +5,18 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.in5bm.equipo3.models.domain.*;
+import com.in5bm.equipo3.models.domain.Curso;
 import java.util.List;
 
 /**
  *
  * @author Brandon Andree Palma Hernandez
  */
-public interface ISalonDao {
+public interface ICursoDao {
     
-    public List<Salon> listar();
-    public Salon encontrar(Salon salon);
-    public int insertar(Salon salon);
-    public int actualizar(Salon salon);
-    public int eliminar(Salon salon);
-    
+    public List<Curso> listar();
+    public Curso encontrar(Curso curso);
+    public int insertar(Curso curso);
+    public int actualizar(Curso curso);
+    public int eliminar(Curso curso);
 }

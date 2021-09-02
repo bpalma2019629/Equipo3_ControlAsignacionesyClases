@@ -17,7 +17,7 @@
         <h1>Lista de Salones</h1>
         
         
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>ID del Salon</th>
@@ -35,7 +35,7 @@
                         <td>${salon.descripcion}</td>
                         <td>${salon.nombreSalon}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}">Eliminar</a>"
+                            <a href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}">Eliminar</a>
                         </td>
                     </tr>
                 </c:forEach>

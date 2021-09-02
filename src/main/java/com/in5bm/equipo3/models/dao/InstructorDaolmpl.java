@@ -3,8 +3,8 @@
 package com.in5bm.equipo3.models.dao;
 
 import com.in5bm.equipo3.db.Conexion;
-import com.equipo3.models.domain.Instructor;
-import com.equipo3.models.idao.IInstructorDao;
+import com.in5bm.equipo3.models.domain.Instructor;
+import com.in5bm.equipo3.models.idao.IInstructorDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -88,7 +88,6 @@ import java.util.List;
                 System.out.println("El instructor a eliminar puede estar asignado a un curso.");
                 System.out.println("Primero elimine el curso.");
             }
-            e.printStackTrace(System.out);
         } finally{
             Conexion.close(pstmt);
             Conexion.close(conn);
