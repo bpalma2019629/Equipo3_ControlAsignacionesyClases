@@ -20,10 +20,10 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID del Salon</th>
+                    <th>ID</th>
                     <th>Capacidad</th>
-                    <th>Descripcion</th>
-                    <th>Nombre del salon</th>
+                    <th>Descripción</th>
+                    <th>Nombre del salón</th>
                     <th></th>
                 </tr>
             </thead>

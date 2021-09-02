@@ -17,7 +17,7 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#c</th>
+                    <th>ID</th>
                     <th>Horario Inicio</th>
                     <th>Horario Final</th>
                 </tr>

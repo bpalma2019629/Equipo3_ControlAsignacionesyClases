@@ -20,9 +20,9 @@
         <table border 1>
             <thead>
             <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Nombre</th>
-                <th>email</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>

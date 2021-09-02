@@ -19,7 +19,7 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Ciclo</th>
                     <th>Cupo Máximo</th>
                     <th>Cupo Mínimo</th>
@@ -27,12 +27,12 @@
                     <th>Código Carrera</th>
                     <th>Nombre Carrera</th>
                     <th>Horario Id</th>
-                    <th>Horario Final</th>
                     <th>Horario Inicio</th>
+                    <th>Horario HoraFinal</th>
                     <th>Instructor Id</th>
                     <th>Nombre Instructor</th>
                     <th>Salón Id</th>
-                    <th>Descripción Salon</th>
+                    <th>Descripción Salón</th>
                     <th></th>
                 </tr>
             </thead>
@@ -47,8 +47,8 @@
                         <td>${curso.codigoCarrera}</td>
                         <td>${curso.nombre}</td>
                         <td>${curso.horarioId}</td>
-                        <td>${curso.horaFinal}</td>
                         <td>${curso.horaInicio}</td>
+                        <td>${curso.horaFinal}</td>
                         <td>${curso.instructorId}</td>
                         <td>${curso.nombres}</td>
                         <td>${curso.salonId}</td>

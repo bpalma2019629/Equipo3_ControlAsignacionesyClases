@@ -17,7 +17,7 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th></th>
                 </tr>
