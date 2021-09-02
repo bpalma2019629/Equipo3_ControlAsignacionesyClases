@@ -14,7 +14,7 @@ package com.in5bm.equipo3.models.domain;
  */
 public class Alumno {
 
-    private int carne;
+    private int String;
     private String nombres;
     private String apellidos;
     private String email;
@@ -25,7 +25,7 @@ public class Alumno {
     }
 
     public Alumno(int carne) {
-        this.carne = carne;
+        this.String = carne;
     }
 
     public Alumno(String nombres, String apellidos, String email) {
@@ -35,18 +35,18 @@ public class Alumno {
     }
 
     public Alumno(int carne, String nombres, String apellidos, String email) {
-        this.carne = carne;
+        this.String = carne;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.email = email;
     }
 
     public int getCarne() {
-        return carne;
+        return String;
     }
 
     public void setCarne(int carne) {
-        this.carne = carne;
+        this.String = carne;
     }
 
     public String getNombres() {
@@ -75,7 +75,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "carne=" + carne + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email + '}';
+        return "Alumno{" + "carne=" + String + ", nombres=" + nombres + ", apellidos=" + apellidos + ", email=" + email + '}';
     }
     
     
