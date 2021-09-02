@@ -20,16 +20,16 @@
         <table border 1>
             <thead>
             <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Nombre</th>
-                <th>email</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>
                 <c:forEach var="alumno" items="${listadoAlumno}">
                     <tr>
                         <td>${alumno.carne}</td>
-                        <td>${alumno.nombres}${alumno.apellidos}</td>
+                        <td>${alumno.nombres} ${alumno.apellidos}</td>
                         <td>${alumno.email}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/ServletAlumnoController?accion=eliminar&carne=${alumno.carne}">Eliminar</a>

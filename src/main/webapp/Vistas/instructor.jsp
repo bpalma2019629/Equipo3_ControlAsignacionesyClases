@@ -17,11 +17,11 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Apellidos</th>
                     <th>Nombres</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
                     <th></th>
                 </tr>
             </thead>
