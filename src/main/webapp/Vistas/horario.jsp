@@ -10,14 +10,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado Horario</title>
+        <title>Listado Horarios</title>
     </head>
     <body>
-        <h1>Listado Horario</h1>
+        <h1>Listado Horarios</h1>
         <table border="1">
             <thead>
                 <tr>
-                    <th>#c</th>
+                    <th>ID</th>
                     <th>Horario Inicio</th>
                     <th>Horario Final</th>
                 </tr>
@@ -33,5 +33,8 @@
                 </c:forEach>
             </tbody>
         </table>
+        <div><br>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        </div>  
     </body>
 </html>

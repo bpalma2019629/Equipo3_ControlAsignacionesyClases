@@ -19,7 +19,7 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Ciclo</th>
                     <th>Cupo Máximo</th>
                     <th>Cupo Mínimo</th>
@@ -27,12 +27,12 @@
                     <th>Código Carrera</th>
                     <th>Nombre Carrera</th>
                     <th>Horario Id</th>
-                    <th>Horario Final</th>
                     <th>Horario Inicio</th>
+                    <th>Horario HoraFinal</th>
                     <th>Instructor Id</th>
                     <th>Nombre Instructor</th>
                     <th>Salón Id</th>
-                    <th>Descripción Salon</th>
+                    <th>Descripción Salón</th>
                     <th></th>
                 </tr>
             </thead>
@@ -47,12 +47,12 @@
                         <td>${curso.codigoCarrera}</td>
                         <td>${curso.nombre}</td>
                         <td>${curso.horarioId}</td>
-                        <td>${curso.horaFinal}</td>
                         <td>${curso.horaInicio}</td>
+                        <td>${curso.horaFinal}</td>
                         <td>${curso.instructorId}</td>
                         <td>${curso.nombres}</td>
                         <td>${curso.salonId}</td>
-                        <td>${curso.descripcion}</td>
+                        <td>${curso.descripcionSalon}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/ServletCursoController?accion=eliminar&cursoId=${curso.cursoId}">Eliminar</a>
                         </td>
@@ -60,5 +60,8 @@
                 </c:forEach>
             </tbody>
         </table>
+        <div><br>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        </div>  
     </body>
 </html>

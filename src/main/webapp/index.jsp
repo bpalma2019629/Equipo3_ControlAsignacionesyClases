@@ -12,13 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Pagina Principal</h1>
+        <h1>Página Principal</h1>
         
         <a href="${pageContext.request.contextPath}/ServletAlumnoController?accion=listar">Listar Alumno</a><br>
-        <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listar salones</a><br>
-        <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">Listar horarios</a><br>
-        <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar carreras tecnicas</a><br>
-        <a href="${pageContext.request.contextPath}/ServletInstructorController?accion=listar">Listar instructores</a><br>
-        <a href="${pageContext.request.contextPath}/ServletCursoController?accion=listar">Listar cursos</a><br>
+        <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listar Salones</a><br>
+        <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">Listar Horarios</a><br>
+        <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar Carreras Tecnicas</a><br>
+        <a href="${pageContext.request.contextPath}/ServletInstructorController?accion=listar">Listar Instructores</a><br>
+        <a href="${pageContext.request.contextPath}/ServletCursoController?accion=listar">Listar Cursos</a><br>
+        <a href="${pageContext.request.contextPath}/ServletAsignacionAlumnoController?accion=listar">Listar Asignaciones</a><br>
     </body>
 </html>

@@ -17,7 +17,7 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th></th>
                 </tr>
@@ -34,5 +34,8 @@
                 </c:forEach>
             </tbody>
         </table>
+        <div><br>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        </div>  
     </body>
 </html>
