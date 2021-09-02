@@ -1,17 +1,19 @@
+drop database Equipo3_Control_de_Asignaciones_y_Clases;
 create database if not exists Equipo3_Control_de_Asignaciones_y_Clases;
 use Equipo3_Control_de_Asignaciones_y_Clases;
+
 
 -- ----------------------------------------------
 -- Tabla instructor
 -- ----------------------------------------------
 create table if not exists instructor (
-  instructor_id INT NOT NULL AUTO_INCREMENT,
-  apellidos VARCHAR(45),
-  nombres VARCHAR(45),
-  direccion VARCHAR(45),
-  telefono VARCHAR(8),
-  PRIMARY KEY (instructor_id)
-);
+	instructor_id INT NOT NULL AUTO_INCREMENT,
+	apellidos VARCHAR(45),
+	nombres VARCHAR(45),
+	direccion VARCHAR(45),
+	telefono VARCHAR(8),
+	PRIMARY KEY (instructor_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Hernandez', 'Pablo', '1ra ave. 1-50 zona 7', '12345678');
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Morales', 'Andree', '2ra ave. 1-47 zona 3', '87654321');
@@ -28,16 +30,6 @@ INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Orella
 -- ----------------------------------------------
 -- Tabla alumnos
 -- ----------------------------------------------
-<<<<<<< HEAD
-=======
-CREATE TABLE alumno (
-  carne varchar(16) not null auto_increment,
-  nombres VARCHAR(45),
-  apellidos VARCHAR(45),
-  email VARCHAR(32),
-  PRIMARY KEY (carne)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
->>>>>>> 42024507ebfa97a2913cda2355c2e0ae30146345
 
 
 
@@ -48,7 +40,8 @@ CREATE TABLE IF NOT EXISTS carrera_tecnica (
 	codigo_carrera VARCHAR(128),
 	nombre VARCHAR(45),
 	PRIMARY KEY (codigo_carrera)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 INSERT INTO carrera_tecnica (codigo_carrera, nombre) VALUES ('CTIN', 'Informática');
 INSERT INTO carrera_tecnica (codigo_carrera, nombre) VALUES ('CTMC', 'Mecánica');
 INSERT INTO carrera_tecnica (codigo_carrera, nombre) VALUES ('CTEC', 'Electrónica en computación');
@@ -70,12 +63,50 @@ create table if not exists salon(
   descripcion varchar(225),
   nombre_salon varchar(255),
   PRIMARY KEY (salon_id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+insert into salon (capacidad,descripcion,nombre_salon)
+values(35,"Salon de Biologia","A-0001");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(35,"Salon de Quimica","A-0002");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(40,"Salon de Matematica","A-0003");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(50,"Salon de Musica","A-0004");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(40,"Salon de Fisica Fundamental","A-0005");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(35,"Salon de Ingles","A-0006");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(40,"Salon de Computacion","A-0007");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(50,"Salon de Pintura","A-0008");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(90,"Salon de Teatro","A-0009");
+insert into salon (capacidad,descripcion,nombre_salon)
+values(25,"Direccion","A-0010");
+
 
 -- ----------------------------------------------
 -- Tabla horario
 -- ----------------------------------------------
+CREATE TABLE IF NOT EXISTS horario (
+	horario_id INT NOT NULL AUTO_INCREMENT,
+	horario_final TIME,
+    horario_inicio TIME,
+    PRIMARY KEY(horario_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+insert into horario (horario_final, horario_inicio) values ('7:30:00', '8:30:00');
+insert into horario (horario_final, horario_inicio) values ('8:30:00', '9:30:00');
+insert into horario (horario_final, horario_inicio) values ('9:30:00', '10:30:00');
+insert into horario (horario_final, horario_inicio) values ('10:30:00', '11:30:00');
+insert into horario (horario_final, horario_inicio) values ('11:30:00', '12:30:00');
+insert into horario (horario_final, horario_inicio) values ('1:30:00', '2:30:00');
+insert into horario (horario_final, horario_inicio) values ('2:30:00', '3:30:00');
+insert into horario (horario_final, horario_inicio) values ('3:30:00', '4:30:00');
+insert into horario (horario_final, horario_inicio) values ('4:30:00', '5:30:00');
+insert into horario (horario_final, horario_inicio) values ('5:30:00', '6:30:00');
 
 
 -- ----------------------------------------------
@@ -117,55 +148,11 @@ INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera,
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '30', '15', 'Instalaciones Electricas I', 'CTEL', '9', '9', '8');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '20', '2', 'Solfeo y entonacion I', 'CTSN', '10', '10', '2');
 
+SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id FROM curso;
+
+SELECT * FROM curso INNER JOIN salon ON salon.salon_id = curso.curso_id;
 
 
--- ----------------------------------------------
--- Registros
--- ----------------------------------------------
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Biologia","A-0001");
-
-<<<<<<< HEAD
-insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Quimica","A-0002");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Matematica","A-0003");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(50,"Salon de Musica","A-0004");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Fisica Fundamental","A-0005");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(35,"Salon de Ingles","A-0006");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(40,"Salon de Computacion","A-0007");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(50,"Salon de Pintura","A-0008");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-values(90,"Salon de Teatro","A-0009");
-
-insert into salon (capacidad,descripcion,nombre_salon)
-<<<<<<< HEAD
-values(25,"Direccion","A-0010");
-
-
-
--- ----------------------------------------------
--- Tabla horario
--- ----------------------------------------------
-
-
-
--- ----------------------------------------------
--- Tabla curso
--- ----------------------------------------------
 
 
 
@@ -173,29 +160,5 @@ values(25,"Direccion","A-0010");
 -- Tabla asignacion_alumno
 -- ----------------------------------------------
 
-=======
-INSERT INTO alumno  (nombres, apellidos, email) VALUES ('carlos', 'Pérez', 'Carlosgarc@kinal.edu.gt');
-
-INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Karyn ', 'Gutierrez', 'karyg@kinal.edu.gt');
-
-INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Xavier ', 'Garcia ', 'garciaxavier068@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Jonathan ', 'Fernandez', 'Fernajona@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('David', 'Herrera', 'herredav@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Andres', 'Palma', 'palmandr@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('karol ', 'ordoñez', 'kaarolordo@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Carla', 'Rodrigez', 'rodriguescar@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Alex', 'Diaz', 'aledia@kinal.edu.gt');
-
-INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('nando', 'moran', 'morannd@kinal.edu.gt');
->>>>>>> 42024507ebfa97a2913cda2355c2e0ae30146345
 
 
-=======
-values(25,"Direccion","A-0010");
->>>>>>> kenneth
