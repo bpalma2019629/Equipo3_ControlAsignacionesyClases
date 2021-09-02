@@ -20,5 +20,6 @@
         <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar carreras tecnicas</a><br>
         <a href="${pageContext.request.contextPath}/ServletInstructorController?accion=listar">Listar instructores</a><br>
         <a href="${pageContext.request.contextPath}/ServletCursoController?accion=listar">Listar cursos</a><br>
+        <a href="${pageContext.request.contextPath}/ServletAsignacionAlumnoController?accion=listar">Listar estudiantes</a><br>
     </body>
 </html>
