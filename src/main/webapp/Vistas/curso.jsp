@@ -52,7 +52,7 @@
                         <td>${curso.instructorId}</td>
                         <td>${curso.nombres}</td>
                         <td>${curso.salonId}</td>
-                        <td>${curso.descripcion}</td>
+                        <td>${curso.descripcionSalon}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/ServletCursoController?accion=eliminar&cursoId=${curso.cursoId}">Eliminar</a>
                         </td>
