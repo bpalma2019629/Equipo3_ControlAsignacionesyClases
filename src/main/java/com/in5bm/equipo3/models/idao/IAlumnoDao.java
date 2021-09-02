@@ -5,19 +5,17 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.equipo3.models.domain.*;
+import com.in5bm.equipo3.models.domain.Alumno;
 import java.util.List;
 
 /**
  *
- * @author Brandon Andree Palma Hernandez
+ * @author garci
  */
 public interface IAlumnoDao {
-    
     public List<Alumno> listar();
     public Alumno encontrar(Alumno alumno);
     public int insertar(Alumno alumno);
     public int actualizar(Alumno alumno);
     public int eliminar(Alumno alumno);
-    
 }

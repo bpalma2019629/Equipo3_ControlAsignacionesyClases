@@ -5,7 +5,7 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.equipo3.models.domain.*;
+import com.in5bm.equipo3.models.domain.CarreraTecnica;
 import java.util.List;
 
 /**
@@ -15,9 +15,9 @@ import java.util.List;
 public interface ICarreraTecnicaDao {
     
     public List<CarreraTecnica> listar();
-    public CarreraTecnica encontrar(CarreraTecnica carrera);
-    public int insertar(CarreraTecnica carrera);
-    public int actualizar(CarreraTecnica carrera);
-    public int eliminar(CarreraTecnica carrera);
+    public CarreraTecnica encontrar(CarreraTecnica carreraTecnica);
+    public int insertar(CarreraTecnica carreraTecnica);
+    public int actualizar(CarreraTecnica carreraTecnica);
+    public int eliminar(CarreraTecnica carreraTecnica);
     
 }

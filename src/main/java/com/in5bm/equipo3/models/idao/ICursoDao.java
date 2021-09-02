@@ -5,7 +5,7 @@
  */
 package com.in5bm.equipo3.models.idao;
 
-import com.equipo3.models.domain.*;
+import com.in5bm.equipo3.models.domain.Curso;
 import java.util.List;
 
 /**
@@ -19,5 +19,4 @@ public interface ICursoDao {
     public int insertar(Curso curso);
     public int actualizar(Curso curso);
     public int eliminar(Curso curso);
-    
 }
