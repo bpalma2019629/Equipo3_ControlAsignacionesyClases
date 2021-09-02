@@ -171,56 +171,42 @@ INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera,
 -- ----------------------------------------------
 -- Tabla asignacion_alumno
 -- ----------------------------------------------
-drop table if exists asignacion_alumno;
 CREATE TABLE IF NOT EXISTS asignacion_alumno(
   asignacion_id varchar(45),
   fecha_asignacion datetime,
-  
   carne VARCHAR(16) NOT NULL,
   curso_id int not null,
-  
+ PRIMARY KEY (asignacion_id),
   CONSTRAINT FK_asignacion_alumno_alumno
     FOREIGN KEY (carne)
     REFERENCES alumno (carne)
-    on delete cascade 
-	on update cascade,
+    on delete cascade
+    on update cascade,
   CONSTRAINT FK_asignacion_alumno_curso
     FOREIGN KEY (curso_id)
     REFERENCES curso (curso_id)
-    on delete cascade 
-	on update cascade,
-  PRIMARY KEY (asignacion_id))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+    on delete cascade
+    on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-12', '2021-01-1 12:00:00', '2021001', 1);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-13', '2021-02-2 1:00:00', '2021002', 2);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-14', '2021-03-3 2:00:00', '2021003', 3);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_ido)
   value('A-15', '2021-04-4 3:00:00', '2021004', 4);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-16', '2021-05-5 4:00:00', '2021005', 5);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-17', '2021-06-6 5:00:00', '2021006', 6);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-18', '2021-07-7 6:00:00', '2021007', 7);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-19', '2021-08-8 7:00:00', '2021008', 8);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-20', '2021-09-9 8:00:00', '2021009', 9);
-  
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id) 
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-21', '2021-10-10 9:00:00', '2021010', 10);
   
-
-select asignacion_alumno.asignacion_id, asignacion_alumno.fecha_asignacion, asignacion_alumno.carne, concat (alumno.nombres,' ',alumno.apellidos) as Nombre_Completo, alumno.email, asignacion_alumno.curso_id, curso.ciclo, curso.cupo_maximo, curso.cupo_minimo from asignacion_alumno inner join alumno on asignacion_alumno.carne=alumno.carne inner join curso on asignacion_alumno.curso_id=curso.curso_id;
 
