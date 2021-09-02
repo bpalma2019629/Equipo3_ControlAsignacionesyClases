@@ -142,6 +142,7 @@ CREATE TABLE IF NOT EXISTS curso (
     PRIMARY KEY (curso_id),
     CONSTRAINT FK_curso_carrera_tecnica
 		FOREIGN KEY (codigo_carrera)
+<<<<<<< HEAD
         REFERENCES carrera_tecnica (codigo_carrera)
         on delete cascade on update cascade,
 	CONSTRAINT FK_curso_horario
@@ -157,6 +158,21 @@ CREATE TABLE IF NOT EXISTS curso (
         REFERENCES salon (salon_id)
 		on delete cascade on update cascade) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+=======
+        REFERENCES carrera_tecnica (codigo_carrera),
+	CONSTRAINT FK_curso_horario
+		FOREIGN KEY (horario_id)
+        REFERENCES horario (horario_id),
+	CONSTRAINT FK_curso_instructor
+		FOREIGN KEY (instructor_id)
+        REFERENCES instructor (instructor_id),
+	CONSTRAINT FK_curso_salon
+		FOREIGN KEY (salon_id)
+        REFERENCES salon (salon_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ---------------------------------------------- palma me dejo esto esto :c
+>>>>>>> 119c21440c1368a372d363339edf12c65b9e9471
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '3', 'Programacion', 'CTIN', '1', '1', '1'); 
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '20', '4', 'Reparacion de morores ', 'CTMC', '2', '4', '7');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '40', '10', 'Mantenimiento de computadoras', 'CTEC', '3', '7', '3');
@@ -167,6 +183,17 @@ INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera,
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '26', '10', 'Plantas y planos I', 'CTDT', '8', '6', '4');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '30', '15', 'Instalaciones Electricas I', 'CTEL', '9', '9', '8');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '20', '2', 'Solfeo y entonacion I', 'CTSN', '10', '10', '2');
+<<<<<<< HEAD
+=======
+
+SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id FROM curso;
+
+SELECT * FROM curso INNER JOIN salon ON salon.salon_id = curso.curso_id;
+
+
+
+
+>>>>>>> 119c21440c1368a372d363339edf12c65b9e9471
 
 -- ----------------------------------------------
 -- Tabla asignacion_alumno
