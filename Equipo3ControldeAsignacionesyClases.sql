@@ -167,17 +167,6 @@ INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera,
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2021', '26', '10', 'Plantas y planos I', 'CTDT', '8', '6', '4');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2020', '30', '15', 'Instalaciones Electricas I', 'CTEL', '9', '9', '8');
 INSERT INTO curso (ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id) VALUES ('2022', '20', '2', 'Solfeo y entonacion I', 'CTSN', '10', '10', '2');
-<<<<<<< HEAD
-
-SELECT curso_id, ciclo, cupo_maximo, cupo_minimo, descripcion, codigo_carrera, horario_id, instructor_id, salon_id FROM curso;
-
-SELECT * FROM curso INNER JOIN salon ON salon.salon_id = curso.curso_id;
-
-
-
-
-=======
->>>>>>> ba1fdc32480781c484dec3becd4c78ee5db40bd4
 
 -- ----------------------------------------------
 -- Tabla asignacion_alumno
