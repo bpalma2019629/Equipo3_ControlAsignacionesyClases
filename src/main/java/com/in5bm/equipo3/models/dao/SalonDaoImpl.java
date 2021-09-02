@@ -5,7 +5,7 @@
  */
 package com.in5bm.equipo3.models.dao;
 
-import com.equipo3.models.domain.Salon;
+import com.in5bm.equipo3.models.domain.Salon;
 import com.in5bm.equipo3.db.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -86,7 +86,7 @@ public class SalonDaoImpl implements ISalonDao{
         } catch (SQLException e) {
             if(e.getErrorCode()==1451){
                 System.out.println("El salon a eliminar puede estar asignado a un curso."
-                        + "\nElimine el curso seleccionado ");
+                + "\nElimine el curso seleccionado ");
             }
         }finally{
         Conexion.close(pstmt);

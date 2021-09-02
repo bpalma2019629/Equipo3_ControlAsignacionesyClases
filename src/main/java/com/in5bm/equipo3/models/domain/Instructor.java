@@ -1,4 +1,4 @@
-package com.equipo3.models.domain;
+package com.in5bm.equipo3.models.domain;
 
 /**
  *

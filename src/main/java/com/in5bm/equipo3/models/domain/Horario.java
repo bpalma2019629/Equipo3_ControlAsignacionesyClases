@@ -60,8 +60,4 @@ public class Horario {
     public String toString() {
         return "Horario{" + "idHorario=" + idHorario + ", horaFinal=" + horaFinal + ", horaInicio=" + horaInicio + '}';
     }
-    
-    
-    
-
 }

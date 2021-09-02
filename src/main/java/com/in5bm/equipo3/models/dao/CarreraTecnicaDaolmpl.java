@@ -3,7 +3,7 @@
 package com.in5bm.equipo3.models.dao;
 
 import com.in5bm.equipo3.db.Conexion;
-import com.equipo3.models.domain.CarreraTecnica;
+import com.in5bm.equipo3.models.domain.CarreraTecnica;
 import com.in5bm.equipo3.models.idao.ICarreraTecnicaDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,8 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 
+ * @author Juan Diego Solís Martínez
+ * @date 28/08/2021
+ * @time 10:02:11 AM
  *
- * @author 
  */
  public class CarreraTecnicaDaolmpl implements ICarreraTecnicaDao {
      
@@ -84,7 +87,6 @@ import java.util.List;
                 System.out.println("La carrera a eliminar puede estar asignada a un curso.");
                 System.out.println("Primero elimine el curso.");
             }
-            e.printStackTrace(System.out);
         } finally{
             Conexion.close(pstmt);
             Conexion.close(conn);

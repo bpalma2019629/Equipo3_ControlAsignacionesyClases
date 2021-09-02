@@ -2,7 +2,7 @@
 
 package com.in5bm.equipo3.controllers;
 import com.in5bm.equipo3.models.dao.InstructorDaolmpl;
-import com.equipo3.models.domain.Instructor;
+import com.in5bm.equipo3.models.domain.Instructor;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServlet;

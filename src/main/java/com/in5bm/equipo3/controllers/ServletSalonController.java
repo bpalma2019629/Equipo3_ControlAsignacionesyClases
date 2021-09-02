@@ -6,7 +6,7 @@
 package com.in5bm.equipo3.controllers;
 
 import com.in5bm.equipo3.models.dao.SalonDaoImpl;
-import com.equipo3.models.domain.Salon;
+import com.in5bm.equipo3.models.domain.Salon;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.annotation.WebServlet;

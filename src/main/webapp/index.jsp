@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listado de salones.</a>"
 =======
@@ -33,5 +34,12 @@
         <a href="${pageContext.request.contextPath}/ServletEstudianteController?accion=listar">Listar Estudiantes</a>
         
 >>>>>>> 42024507ebfa97a2913cda2355c2e0ae30146345
+=======
+        <a href="${pageContext.request.contextPath}/ServletSalonController?accion=listar">Listar salones</a><br>
+        <a href="${pageContext.request.contextPath}/ServletHorarioController?accion=listar">Listar horarios</a><br>
+        <a href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar">Listar carreras tecnicas</a><br>
+        <a href="${pageContext.request.contextPath}/ServletInstructorController?accion=listar">Listar instructores</a><br>
+        <a href="${pageContext.request.contextPath}/ServletCursoController?accion=listar">Listar cursos</a><br>
+>>>>>>> 378b8280b46f16eba9f4bd2640312dd9c1cb90c0
     </body>
 </html>

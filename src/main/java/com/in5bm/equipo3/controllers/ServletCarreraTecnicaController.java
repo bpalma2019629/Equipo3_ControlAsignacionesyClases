@@ -2,7 +2,7 @@
 
 package com.in5bm.equipo3.controllers;
 import com.in5bm.equipo3.models.dao.CarreraTecnicaDaolmpl;
-import com.equipo3.models.domain.CarreraTecnica;
+import com.in5bm.equipo3.models.domain.CarreraTecnica;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 
 /**
+ * 
+ * @author Juan Diego Solís Martínez
+ * @date 28/08/2021
+ * @time 10:02:11 AM
  *
- * @author 
  */
 @WebServlet("/ServletCarreraTecnicaController")
 public class ServletCarreraTecnicaController extends HttpServlet{
