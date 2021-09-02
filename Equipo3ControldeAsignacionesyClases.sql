@@ -194,7 +194,7 @@ insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-13', '2021-02-2 1:00:00', '2021002', 2);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-14', '2021-03-3 2:00:00', '2021003', 3);
-  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_ido)
+  insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-15', '2021-04-4 3:00:00', '2021004', 4);
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-16', '2021-05-5 4:00:00', '2021005', 5);

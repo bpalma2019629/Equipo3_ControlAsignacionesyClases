@@ -37,9 +37,9 @@
                     </tr>
                 </c:forEach>
             </tbody>
-        </table>
+        </table><br>
         <div>
-       
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
         </div>  
     </body>
 </html>
