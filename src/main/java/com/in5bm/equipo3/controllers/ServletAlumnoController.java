@@ -58,7 +58,13 @@ public class ServletAlumnoController extends HttpServlet {
         List<Alumno> listaAlumno = new AlumnoDaoImpl().listar();
         HttpSession sesion=request.getSession();
         sesion.setAttribute("listadoAlumno", listaAlumno);
+
         response.sendRedirect("Vistas/alumno.jsp");
+
+        sesion.setAttribute("ver alumno", listaAlumno.size());
+       
+        response.sendRedirect("Vistas/alumno/alumno.jsp");
+
 
     }
 

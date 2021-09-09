@@ -69,7 +69,7 @@ public class ServletHorarioController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoHorario", listaHorario);
-        response.sendRedirect("Vistas/horario.jsp");
+        response.sendRedirect("Vistas/horario/horario.jsp");
         
         
     }

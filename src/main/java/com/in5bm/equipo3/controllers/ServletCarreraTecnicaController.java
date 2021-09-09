@@ -54,7 +54,7 @@ public class ServletCarreraTecnicaController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCarreraTecnica", listaCarreraTecnica);
-        response.sendRedirect("Vistas/carreraTecnica.jsp");
+        response.sendRedirect("Vistas/carreraTecnica/carreraTecnica.jsp");
     }
     
     @Override
