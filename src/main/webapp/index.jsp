@@ -18,7 +18,7 @@
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
         <main>
-            <div class="container">
+            <div class="container pn-4">
                 <div class="container">
                     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
