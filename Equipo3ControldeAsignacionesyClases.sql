@@ -3,6 +3,8 @@ create database if not exists Equipo3_Control_de_Asignaciones_y_Clases;
 use Equipo3_Control_de_Asignaciones_y_Clases;
 
 
+<<<<<<< HEAD
+=======
 -- ----------------------------------------------
 -- Tabla instructor
 -- ----------------------------------------------
@@ -14,6 +16,7 @@ create table if not exists instructor (
 	telefono VARCHAR(8),
 	PRIMARY KEY (instructor_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+>>>>>>> 2433ea2e005391e2ab5873e6e693a6e2c53ed2f7
 
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Hernandez', 'Pablo', '1ra ave. 1-50 zona 7', '12345678');
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Morales', 'Andree', '2ra ave. 1-47 zona 3', '87654321');
@@ -50,6 +53,29 @@ INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021086,'Diaz','Ale
 INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021297,'Moran','Nando', 'morannd@kinal.edu.gt');
 
 
+<<<<<<< HEAD
+
+INSERT INTO alumno  (nombres, apellidos, email) VALUES ('carlos', 'Pérez', 'Carlosgarc@kinal.edu.gt');
+
+INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Karyn ', 'Gutierrez', 'karyg@kinal.edu.gt');
+
+INSERT INTO alumno (nombres, apellidos, email, telefono, saldo) VALUES ('Xavier ', 'Garcia ', 'garciaxavier068@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Jonathan ', 'Fernandez', 'Fernajona@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('David', 'Herrera', 'herredav@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Andres', 'Palma', 'palmandr@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('karol ', 'ordoñez', 'kaarolordo@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Carla', 'Rodrigez', 'rodriguescar@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('Alex', 'Diaz', 'aledia@kinal.edu.gt');
+
+INSERT INTO alumno  (nombres, apellidos, email, telefono, saldo) VALUES ('nando', 'moran', 'morannd@kinal.edu.gt');
+
+=======
 -- ----------------------------------------------
 -- Tabla carrera_tecnica
 -- ----------------------------------------------
@@ -209,4 +235,5 @@ insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-21', '2020-10-11 9:00:00', '2021150', 10);
   
+>>>>>>> 2433ea2e005391e2ab5873e6e693a6e2c53ed2f7
 
