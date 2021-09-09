@@ -52,8 +52,8 @@
                                     <td>${salon.descripcion}</td>
                                     <td>${salon.nombreSalon}</td>
                                     <td>
-                                        <a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>Editar</a>
-                                        <a class = "btn btn-danger" href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}">Eliminar</a>
+                                        <a class="btn btn-warning"  href="#"><i class="far fa-edit"></i> Editar</a>
+                                        <a class="btn btn-danger" href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}"> <i class="fas fa-trash"></i> Eliminar</a>
                                     </td>
                                 </tr>
                             </c:forEach>
