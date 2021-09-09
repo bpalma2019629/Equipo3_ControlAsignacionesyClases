@@ -52,7 +52,7 @@ public class ServletSalonController extends HttpServlet {
         sesion.setAttribute("listadoSalones", listaSalon);
         sesion.setAttribute("totalSalones", listaSalon.size());
 
-        response.sendRedirect("Vistas/salon.jsp");
+        response.sendRedirect("Vistas/salon/salon.jsp");
 
     }
 

@@ -10,8 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="https://kit.fontawesome.com/d30c7c2674.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./assets/css/bootstrap.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <title>Página Principal</title>
     </head>
     <body>
@@ -23,24 +24,18 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="7000">
                                 <img src="assets/img/tecnicas.jpg" class="d-block w-100" alt="Carreras Tecnicas">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Carreras Técnicas</h5>
-                                    <p class="text-white">Contamos con educación especializada en diversas Carreras Técnicas</p>
-                                </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="7000">
                                 <img src="assets/img/salon computo.jpg" class="d-block w-100" alt="Salones" >
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Salones</h5>
-                                    <p class="text-white">Los salones estan equipados con los instrumentos necesarios para una buena educación </p>
-                                </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="7000">
                                 <img src="assets/img/profesor.jpg" class="d-block w-100" alt="Intructores">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Instructores</h5>
-                                    <p class="text-white">El personal esta capacitado para impartir una educación de alto nivel técnico</p>
-                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="7000">
+                                <img src="assets/img/electro.jpg" class="d-block w-100" alt="Intructores">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="7000">
+                                <img src="assets/img/horario.jpg" class="d-block w-100" alt="Intructores">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">

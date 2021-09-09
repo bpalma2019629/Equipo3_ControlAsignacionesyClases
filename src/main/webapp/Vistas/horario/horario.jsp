@@ -11,19 +11,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/style.css">
-        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <script src="https://kit.fontawesome.com/d30c7c2674.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../../assets/css/style.css">
         <title>Listado Horarios</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
         <section id = "horario">
-            <div class="container mt-5">
+            <div class="container mt-5 mb-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-md-9">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Listado de Horarios</h4>
+                                <h4><i class="fas fa-calendar-alt"></i>        Horarios</h4>
                             </div>
                         </div>
                         <table class="table table-dark table-hover"">
@@ -33,6 +34,7 @@
                                     <th>Horario Inicio</th>
                                     <th>Horario Final</th>
                                     <th>    </th>
+                                    <th>    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,7 +43,8 @@
                                         <td>${horario.idHorario}</td>
                                         <td>${horario.horaInicio}</td>
                                         <td>${horario.horaFinal}</td>
-                                        <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletHorarioController?accion=eliminar&idHorario=${horario.idHorario}">Eliminar</a></td>
+                                        <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
+                                        <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletHorarioController?accion=eliminar&idHorario=${horario.idHorario}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
@@ -49,13 +52,8 @@
                     </div>
                     <div class="col-12 col-md-3">
                         <div class="btn btn-success card text-center bg-success text-white mb-3">
-                            <div class="card-body">
-                                Agregar
-                            </div>
-                        </div>
-                        <div class="btn btn-warning card text-center bg-warning text-white mb-3">
-                            <div class="card-body">
-                                Modificar
+                            <div class="card-body btn btn-success">
+                                <i class="fas fa-plus"></i> Agregar
                             </div>
                         </div>
                     </div>
@@ -63,7 +61,8 @@
             </div>
         </section>
     </main>
-    <script src="../assets/js/jquery-3.6.0.js"></script>
-    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>
