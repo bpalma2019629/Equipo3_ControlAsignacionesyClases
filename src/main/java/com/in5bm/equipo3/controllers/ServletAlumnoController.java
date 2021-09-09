@@ -65,7 +65,7 @@ public class ServletAlumnoController extends HttpServlet {
         sesion.setAttribute("listadoAlumno", listaAlumno);
         sesion.setAttribute("ver alumno", listaAlumno.size());
        
-        response.sendRedirect("Vistas/alumno.jsp");
+        response.sendRedirect("Vistas/alumno/alumno.jsp");
 
     }
 
