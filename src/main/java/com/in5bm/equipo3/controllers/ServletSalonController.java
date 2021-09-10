@@ -21,6 +21,8 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/ServletSalonController")
 public class ServletSalonController extends HttpServlet {
+    
+    private static final String JSP_LISTAR= "vistas/salon/salon.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -52,7 +54,7 @@ public class ServletSalonController extends HttpServlet {
         sesion.setAttribute("listadoSalones", listaSalon);
         sesion.setAttribute("totalSalones", listaSalon.size());
 
-        response.sendRedirect("Vistas/salon.jsp");
+        response.sendRedirect(JSP_LISTAR);
 
     }
 

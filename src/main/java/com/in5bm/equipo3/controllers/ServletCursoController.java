@@ -27,6 +27,8 @@ import javax.servlet.ServletException;
 
 @WebServlet("/ServletCursoController")
 public class ServletCursoController extends HttpServlet{
+    
+    private static final String JSP_LISTAR= "vistas/curso/curso.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -66,7 +68,7 @@ public class ServletCursoController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCurso", listaCurso);
-        response.sendRedirect("Vistas/curso.jsp");
+        response.sendRedirect(JSP_LISTAR);
     }
     
     @Override

@@ -27,6 +27,8 @@ import javax.ws.rs.OPTIONS;
 @WebServlet("/ServletHorarioController")
 public class ServletHorarioController extends HttpServlet{
     
+    private static final String JSP_LISTAR= "vistas/horario/horario.jsp";
+    
     @Override
     protected void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
         
@@ -52,7 +54,7 @@ public class ServletHorarioController extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response){
         
     }
-    
+   
     private void eliminarHorario(HttpServletRequest request, HttpServletResponse response) throws IOException{
         int idHorario = Integer.parseInt(request.getParameter("idHorario"));
         Horario horario = new Horario(idHorario);
@@ -69,7 +71,7 @@ public class ServletHorarioController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoHorario", listaHorario);
-        response.sendRedirect("Vistas/horario.jsp");
+        response.sendRedirect(JSP_LISTAR);
         
         
     }

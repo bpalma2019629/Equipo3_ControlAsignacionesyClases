@@ -3,6 +3,7 @@ create database if not exists Equipo3_Control_de_Asignaciones_y_Clases;
 use Equipo3_Control_de_Asignaciones_y_Clases;
 
 
+
 -- ----------------------------------------------
 -- Tabla instructor
 -- ----------------------------------------------
@@ -14,6 +15,7 @@ create table if not exists instructor (
 	telefono VARCHAR(8),
 	PRIMARY KEY (instructor_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Hernandez', 'Pablo', '1ra ave. 1-50 zona 7', '12345678');
 INSERT INTO instructor (apellidos, nombres, direccion, telefono) VALUES ('Morales', 'Andree', '2ra ave. 1-47 zona 3', '87654321');
@@ -48,7 +50,6 @@ INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021175, 'Ordoñez'
 INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021512,'Rodrigez','Carla', 'rodriguescar@kinal.edu.gt');
 INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021086,'Diaz','Alex', 'aledia@kinal.edu.gt');
 INSERT INTO alumno  (carne,apellidos,nombres, email) VALUES (2021297,'Moran','Nando', 'morannd@kinal.edu.gt');
-
 
 -- ----------------------------------------------
 -- Tabla carrera_tecnica

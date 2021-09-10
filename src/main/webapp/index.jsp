@@ -10,54 +10,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="https://kit.fontawesome.com/d30c7c2674.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./assets/css/bootstrap.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <title>Página Principal</title>
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
         <main>
-            <div class="container">
-                <div class="container">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="7000">
-                                <img src="assets/img/tecnicas.jpg" class="d-block w-100" alt="Carreras Tecnicas">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Carreras Técnicas</h5>
-                                    <p class="text-white">Contamos con educación especializada en diversas Carreras Técnicas</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="7000">
-                                <img src="assets/img/salon computo.jpg" class="d-block w-100" alt="Salones" >
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Salones</h5>
-                                    <p class="text-white">Los salones estan equipados con los instrumentos necesarios para una buena educación </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item" data-bs-interval="7000">
-                                <img src="assets/img/profesor.jpg" class="d-block w-100" alt="Intructores">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">Instructores</h5>
-                                    <p class="text-white">El personal esta capacitado para impartir una educación de alto nivel técnico</p>
-                                </div>
-                            </div>
+            <div class="container pn-4 pt-4 pb-4">
+                <div class="container text-center text-black bg-white py-4">
+                    <div class="container">
+                        <h2 >BIENVENIDO</h2><hr>
+                        <h3> Esta página web permite llevar un control sobre asignaciones y cursos de alumnos, salones, horarios, carreras técnicas e instructores</h3>
+                        <div class="container py-4">
+                            <img src="assets/img/Product Manager_Monochromatic.svg">
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    </section>
-                </div>   
+                        <h3> y recuerda siempre "El trabajo bien hecho".</h3>
+                    </div>  
+                </div> 
             </div>
         </main>
-    <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
-    <script src="./assets/js/jquery-3.6.0.js"></script>
-    <script src="./assets/js/bootstrap.bundle.js"></script>
-</body>
+        <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
+        <script src="./assets/js/jquery-3.6.0.js"></script>
+        <script src="./assets/js/bootstrap.bundle.js"></script>
+    </body>
 </html>

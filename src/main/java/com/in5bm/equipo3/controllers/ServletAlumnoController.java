@@ -30,6 +30,8 @@ import com.in5bm.equipo3.models.dao.AlumnoDaoImpl;
 
 @WebServlet("/ServletAlumnoController")
 public class ServletAlumnoController extends HttpServlet {
+    
+    private static final String JSP_LISTAR= "vistas/alumno/alumno.jsp";
 
     
     
@@ -56,29 +58,18 @@ public class ServletAlumnoController extends HttpServlet {
 
     private void listarAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Alumno> listaAlumno = new AlumnoDaoImpl().listar();
-        double saldo = 0;
-
-        for (Alumno estudiante : listaAlumno) {
-            
-        }
-        HttpSession sesion = request.getSession();
+        HttpSession sesion=request.getSession();
         sesion.setAttribute("listadoAlumno", listaAlumno);
-        sesion.setAttribute("ver alumno", listaAlumno.size());
-       
-        response.sendRedirect("Vistas/alumno.jsp");
+
+        response.sendRedirect(JSP_LISTAR);
 
     }
 
     private void eliminarAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String carne = request.getParameter("carne");
-
-        Alumno alumno = new Alumno(carne);
-
-        int registrosEliminados = new AlumnoDaoImpl().eliminar(alumno);
-
-        System.out.println("Cantidad de registros eliminar: " + registrosEliminados);
-
-        listarAlumnos(request, response);
+    String  carne= request.getParameter("carne");
+    Alumno asignacionAlumno = new Alumno(carne);
+    int registrosEliminados = new AlumnoDaoImpl().eliminar(asignacionAlumno);
+    listarAlumnos(request, response);
     }
 
     @Override
