@@ -19,6 +19,8 @@ import javax.servlet.ServletException;
 @WebServlet("/ServletInstructorController")
 public class ServletInstructorController extends HttpServlet{
     
+    private static final String JSP_LISTAR= "vistas/instructor/instructor.jsp";
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String accion = request.getParameter("accion");
@@ -51,7 +53,7 @@ public class ServletInstructorController extends HttpServlet{
         
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoInstructor", listaInstructor);
-        response.sendRedirect("Vistas/instructor/instructor.jsp");
+        response.sendRedirect(JSP_LISTAR);
     }
     
     @Override

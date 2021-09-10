@@ -26,6 +26,8 @@ import javax.servlet.ServletException;
 @WebServlet("/ServletAsignacionAlumnoController")
 public class ServletAsignacionAlumnoController extends HttpServlet{
     
+    private static final String JSP_LISTAR= "vistas/asignacion-alumno/asignacion-alumno.jsp";
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         
@@ -55,7 +57,7 @@ public class ServletAsignacionAlumnoController extends HttpServlet{
         List<AsignacionAlumno> listaAsignacionAlumno = new AsignacionAlumnoDaoImpl().listar();
         HttpSession sesion=request.getSession();
         sesion.setAttribute("listadoAsignacionAlumno", listaAsignacionAlumno);
-        response.sendRedirect("Vistas/asignacion_alumno/asignacion_alumno.jsp");
+        response.sendRedirect(JSP_LISTAR);
     }
     
     @Override

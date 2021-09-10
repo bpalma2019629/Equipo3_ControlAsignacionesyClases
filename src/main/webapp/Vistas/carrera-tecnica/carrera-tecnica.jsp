@@ -18,14 +18,32 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
+        <div id="main-header" class ="py-2 bg-dark text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>
+                            Control Carreras Técnicas
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
         <section id = "carreraTecnica">
-       
         <div class="container mt-5 mb-5 pb-5">
                 <div class="row">
-                    <div class="col-12 col-md-9">
+                    <div class="col-12 col-md-3">
+                        <div class="btn btn-success card text-center bg-success text-white mb-3">
+                            <div class="card-body btn btn-success">
+                                <i class="fas fa-plus"></i> Agregar
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4><i class="fas fa-book"></i>        Carreras Tecnicas</h4>
+                                <h4><i class="fas fa-book"></i>      Carreras Técnicas</h4>
                             </div>
                         </div>
                         <table class="table table-dark table-hover"">
@@ -48,13 +66,6 @@
                                 </c:forEach>
                             </tbody>
                         </table>
-                    </div>
-                   <div class="col-12 col-md-3">
-                        <div class="btn btn-success card text-center bg-success text-white mb-3">
-                            <div class="card-body btn btn-success">
-                                <i class="fas fa-plus"></i> Agregar
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
