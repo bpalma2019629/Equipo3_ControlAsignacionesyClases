@@ -30,6 +30,8 @@ import com.in5bm.equipo3.models.dao.AlumnoDaoImpl;
 
 @WebServlet("/ServletAlumnoController")
 public class ServletAlumnoController extends HttpServlet {
+    
+    private static final String JSP_LISTAR= "vistas/alumno/alumno.jsp";
 
     
     
@@ -59,12 +61,7 @@ public class ServletAlumnoController extends HttpServlet {
         HttpSession sesion=request.getSession();
         sesion.setAttribute("listadoAlumno", listaAlumno);
 
-        response.sendRedirect("Vistas/alumno.jsp");
-
-        sesion.setAttribute("ver alumno", listaAlumno.size());
-       
-        response.sendRedirect("Vistas/alumno/alumno.jsp");
-
+        response.sendRedirect(JSP_LISTAR);
 
     }
 

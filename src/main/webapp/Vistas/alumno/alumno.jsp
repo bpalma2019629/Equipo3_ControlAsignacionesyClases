@@ -18,52 +18,66 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
-        <section id = "carne">
-            <div class="container mt-5 mb-5 pb-5">
+        <div id="main-header" class ="py-2 bg-dark text-white text-center">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-9">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4><i class="fas fa-calendar-alt"></i>        Alumnos</h4>
-                            </div>
-                        </div>
-                        <table class="table table-dark table-hover"">
-                            <thead class="table-dark table-hover">
-                                <tr>
-                                    <th>carne</th>
-                                    <th>nombres</th>
-                                    <th>apellidos</th>
-                                    <th>email</th>
-                                    <th>    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach var="alumno" items="${listadoAlumno}">
-                                    <tr>
-                                        <td>${alumno.carne}</td>
-                                        <td>${alumno.nombres}</td>
-                                        <td>${alumno.apellidos}</td>
-                                        <td>${alumno.email}</td>
-                                        <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
-                                        <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletAlumnoController?accion=eliminar&carne=${alumno.carne}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
-                                    </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="btn btn-success card text-center bg-success text-white mb-3">
-                            <div class="card-body btn btn-success">
-                                <i class="fas fa-plus"></i> Agregar
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <h1>
+                            Control Alumnos
+                        </h1>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-    <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
-    <script src="../../assets/js/jquery-3.6.0.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.js"></script>
+        </div>
+        <main>
+            <section id = "carne">
+                <div class="container mt-5 mb-5 pb-5">
+                    <div class="row">
+                        <section id = "carne">
+                        <div class="col-12 col-md-3">
+                            <div class="btn btn-success card text-center bg-success text-white mb-3">
+                                <div class="card-body btn btn-success">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4><i class="fas fa-user-graduate"></i>        Alumnos</h4>
+                                </div>
+                            </div>
+                            <table class="table table-dark table-hover"">
+                                <thead class="table-dark table-hover">
+                                    <tr>
+                                        <th>carne</th>
+                                        <th>nombres</th>
+                                        <th>apellidos</th>
+                                        <th>email</th>
+                                        <th>    </th>
+                                        <th>    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach var="alumno" items="${listadoAlumno}">
+                                        <tr>
+                                            <td>${alumno.carne}</td>
+                                            <td>${alumno.nombres}</td>
+                                            <td>${alumno.apellidos}</td>
+                                            <td>${alumno.email}</td>
+                                            <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
+                                            <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletAlumnoController?accion=eliminar&carne=${alumno.carne}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
+        <script src="../../assets/js/jquery-3.6.0.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.js"></script>
     </body>
 </html>

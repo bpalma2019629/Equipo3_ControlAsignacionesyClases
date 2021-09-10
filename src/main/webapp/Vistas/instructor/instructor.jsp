@@ -20,10 +20,29 @@
     <body>
         
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
+        <div id="main-header" class ="py-2 bg-dark text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>
+                            Control Instructores
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
          <section id = "instructores">
             <div class="container mt-5 mb-5 pb-5">
                 <div class="row">
-                    <div class="col-12 col-md-9">
+                    <div class="col-12 col-md-3">
+                        <div class="btn btn-success card text-center bg-success text-white mb-3">
+                            <div class="card-body btn btn-success">
+                                <i class="fas fa-plus"></i> Agregar
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4><i class="fas fa-chalkboard-teacher"></i>        Instructores</h4>
@@ -57,29 +76,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-12 col-md-3">
-                        <div class="btn btn-success card text-center bg-success text-white mb-3">
-                            <div class="card-body btn btn-success">
-                                <i class="fas fa-plus"></i> Agregar
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-        
-        
-        
-        
-        <footer class="bg-dark text-white" id="equipo3-footer">
-            <div class="container align-items-center">
-                <div class="row">
-                    <p class="col-12 text-reset">Todos los derechos reservados | &copy; 2021 - Equipo3</p>
-                </div>
-            </div>
-        </footer>  
-        
-        
+        <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />     
     <script src="../../assets/js/jquery-3.6.0.js"></script>
     <script src="../../assets/js/bootstrap.bundle.js"></script>
     </body>

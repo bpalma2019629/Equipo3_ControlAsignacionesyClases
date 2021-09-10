@@ -24,14 +24,32 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <h1>Lista de Salones</h1>
-
-        <div class="container mt-5 mb-5 pb-5">
+        <div id="main-header" class ="py-2 bg-dark text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>
+                            Control Salones
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
+         <section id = "salones">
+        <div class="container mt-5 mb-5 pb-5 ">
             <div class="row">
-                <div class="col-12 col-md-9">
+                <div class="col-12 col-md-3">
+                    <div class="btn btn-success card text-center bg-success text-white mb-3">
+                        <div class="card-body btn btn-success">
+                            <i class="fas fa-plus"></i>Agregar
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4><i class="fas fa-chalkboard"></i>Salones</h4>
+                            <h4><i class="fas fa-chalkboard"></i>    Salones</h4>
                         </div>
                     </div>
                     <table class="table table-dark table-hover">
@@ -41,7 +59,8 @@
                                 <th>Capacidad</th>
                                 <th>Descripción</th>
                                 <th>Nombre del salón</th>
-                                <th>Acciones</th>
+                                <th> </th>
+                                <th> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,19 +72,14 @@
                                     <td>${salon.nombreSalon}</td>
                                     <td>
                                         <a class="btn btn-warning"  href="#"><i class="far fa-edit"></i> Editar</a>
+                                    </td>
+                                    <td>
                                         <a class="btn btn-danger" href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}"> <i class="fas fa-trash"></i> Eliminar</a>
                                     </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="btn btn-success card text-center bg-success text-white mb-3">
-                        <div class="card-body btn btn-success">
-                            <i class="fas fa-plus"></i>Agregar
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
