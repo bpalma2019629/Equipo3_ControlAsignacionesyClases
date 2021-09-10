@@ -31,6 +31,11 @@
                 </div> 
             </div>
         </main>
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
         <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
         <script src="./assets/js/jquery-3.6.0.js"></script>
         <script src="./assets/js/bootstrap.bundle.js"></script>
