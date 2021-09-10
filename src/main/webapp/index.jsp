@@ -18,12 +18,12 @@
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
         <main>
-            <div class="container pn-4 pt-5">
-                <div class="container text-center text-black bg-white py-5">
+            <div class="container pn-4 pt-4 pb-4">
+                <div class="container text-center text-black bg-white py-4">
                     <div class="container">
                         <h2 >BIENVENIDO</h2><hr>
                         <h3> Esta página web permite llevar un control sobre asignaciones y cursos de alumnos, salones, horarios, carreras técnicas e instructores</h3>
-                        <div class="container py-5">
+                        <div class="container py-4">
                             <img src="assets/img/Product Manager_Monochromatic.svg">
                         </div>
                         <h3> y recuerda siempre "El trabajo bien hecho".</h3>
