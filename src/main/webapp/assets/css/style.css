@@ -4,13 +4,8 @@
 }
 
 body{
-<<<<<<< HEAD
-    background-image: linear-gradient(to top,  rgba(71, 71, 80, 0.4) 0%, rgba(57, 57, 59, 0.4) 100%), url(../img/Libros.jpg);
-    background-size: cover;
-=======
     background-image: linear-gradient(to top,  rgba(71, 71, 80, 0.4) 0%, rgba(57, 57, 59, 0.4) 100%), url(../img/Libros.jpg) !important;
     background-size: cover !important;
->>>>>>> 03a27d4a71b5daabddaa9e11c1f43f1aeed7c073
 }
 
 #equipo3-header {

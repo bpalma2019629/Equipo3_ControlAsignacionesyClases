@@ -32,6 +32,11 @@ public class Horario {
         this.horaInicio = horaInicio;
     }
 
+    public Horario(Time horaFinal, Time horaInicio) {
+        this.horaFinal = horaFinal;
+        this.horaInicio = horaInicio;
+    }
+
     public int getIdHorario() {
         return idHorario;
     }
