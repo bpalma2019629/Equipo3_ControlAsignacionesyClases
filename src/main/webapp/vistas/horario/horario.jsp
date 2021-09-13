@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="es_GT"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,8 +37,35 @@
                     <div class="row">
                         <div class="col-12 col-md-3">
                             <div class="btn btn-success card text-center bg-success text-white mb-3">
-                                <div class="card-body btn btn-success">
+                                <div class="card-body btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
                                     <i class="fas fa-plus"></i> Agregar
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-black text-white">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar estudiante</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form method="POST" action="${pageContext.request.contextPath}/ServletHorarioController" class ="was-validated">
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="horaInicio" class="form-label">Hora Entrada</label>
+                                                <input type="time" class="form-control" name="horaInicio" id="horaInicio" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="horaFinal"  class="form-label">Hora Salida</label>
+                                                <input type="time" class="form-control" name="horaFinal" id="horaFinal" required>
+                                            </div>
+                                            <input type="hidden" name="accion" value="insertar">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Guardar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +91,7 @@
                                             <td>${horario.idHorario}</td>
                                             <td>${horario.horaInicio}</td>
                                             <td>${horario.horaFinal}</td>
-                                            <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
+                                            <td><a class = "btn btn-warning" href="${pageContext.request.contextPath}/ServletHorarioController?accion=editar&idHorario=${horario.idHorario}"><i class="far fa-edit"></i>    Editar</a></td>
                                             <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletHorarioController?accion=eliminar&idHorario=${horario.idHorario}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
                                         </tr>
                                     </c:forEach>
