@@ -3,11 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-
-
-
 package com.in5bm.equipo3.controllers;
 
 import java.io.IOException;
@@ -20,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import com.in5bm.equipo3.models.domain.Alumno;
 import com.in5bm.equipo3.models.dao.AlumnoDaoImpl;
+import java.io.UnsupportedEncodingException;
 
 /**
  *
@@ -27,16 +23,14 @@ import com.in5bm.equipo3.models.dao.AlumnoDaoImpl;
  * @date 31/08/2021
  * @time 07:12:03 PM
  */
-
 @WebServlet("/ServletAlumnoController")
 public class ServletAlumnoController extends HttpServlet {
-    
-    private static final String JSP_LISTAR= "vistas/alumno/alumno.jsp";
 
-    
-    
+    private static final String JSP_LISTAR = "vistas/alumno/alumno.jsp";
+    private static final String JSP_EDITAR = "vistas/alumno/editar-alumnos.jsp";
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String accion = request.getParameter("accion");
 
@@ -46,6 +40,7 @@ public class ServletAlumnoController extends HttpServlet {
                     listarAlumnos(request, response);
                     break;
                 case "editar":
+                    editarAlumno(request, response);
                     break;
                 case "eliminar":
                     eliminarAlumnos(request, response);
@@ -56,9 +51,22 @@ public class ServletAlumnoController extends HttpServlet {
 
     }
 
+    private void editarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        int carne = Integer.parseInt(request.getParameter("carne"));
+
+        Alumno alumno = new AlumnoDaoImpl().encontrar(new Alumno(carne));
+
+        request.setAttribute("alumno", alumno);
+
+        System.out.println(alumno);
+
+        request.getRequestDispatcher(JSP_EDITAR).forward(request, response);
+    }
+
     private void listarAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<Alumno> listaAlumno = new AlumnoDaoImpl().listar();
-        HttpSession sesion=request.getSession();
+        HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoAlumno", listaAlumno);
 
         response.sendRedirect(JSP_LISTAR);
@@ -66,15 +74,58 @@ public class ServletAlumnoController extends HttpServlet {
     }
 
     private void eliminarAlumnos(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String  carne= request.getParameter("carne");
-    Alumno asignacionAlumno = new Alumno(carne);
-    int registrosEliminados = new AlumnoDaoImpl().eliminar(asignacionAlumno);
-    listarAlumnos(request, response);
+        String carne = request.getParameter("carne");
+        Alumno asignacionAlumno = new Alumno(carne);
+        int registrosEliminados = new AlumnoDaoImpl().eliminar(asignacionAlumno);
+        listarAlumnos(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
+
+        String accion = request.getParameter("accion");
+        if (accion != null) {
+            switch (accion) {
+                case "insertar":
+                    insertarAlumno(request, response);
+                    break;
+                      case"actualizar":
+                    actualizarAlumno(request, response);
+                    break;
+            }
+        }
 
     }
-    
+
+    private void insertarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String nombre = request.getParameter("nombres");
+        String apellido = request.getParameter("apellidos");
+        String email = request.getParameter("email");
+
+        Alumno alumno = new Alumno(nombre, apellido, email);
+        System.out.println(alumno);
+
+        int registrosInsertados = new AlumnoDaoImpl().insertar(alumno);
+        System.out.println("Registros Insertdos:" + registrosInsertados);
+
+        listarAlumnos(request, response);
+
+    }
+
+    private void actualizarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        int carne = Integer.parseInt(request.getParameter("carne"));
+        String nombre = request.getParameter("nombres");
+        String apellido = request.getParameter("apellidos");
+        String email = request.getParameter("email");
+
+        Alumno alumno = new Alumno(carne, nombre, apellido, email);
+
+        int registrosActualizados = new AlumnoDaoImpl().actualizar(alumno);
+
+        listarAlumnos(request, response);
+
+    }
+
 }

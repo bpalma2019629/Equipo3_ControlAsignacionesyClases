@@ -41,6 +41,18 @@ public class Alumno {
         this.email = email;
     }
 
+    public Alumno(String nombre, String apellido, String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Alumno(int carne) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Alumno(int carne, String nombre, String apellido, String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getCarne() {
         return carne;
     }

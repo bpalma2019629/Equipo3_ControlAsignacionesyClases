@@ -25,6 +25,10 @@ public class AlumnoDaoImpl implements IAlumnoDao{
 
     private static final String SQL_SELECT ="SELECT carne, nombres, apellidos, email  FROM alumno";
     private static final String SQL_DELETE="DELETE FROM alumno where carne = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT  carne, nombres, apellidos, email FROM alumno WHERE carne = ? ";
+    private static final String SQL_INSERT = "INSERT INTO alumno(nombres,apellidos,email)VALUES (?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE alumno SET nombres = ?,apellidos = ?,email = ? WHERE carne = ?";
+    
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     private ResultSet rs = null;
@@ -39,11 +43,11 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             rs = pstmt.executeQuery();
             while(rs.next()){
                 String carne = rs.getString("carne");
-                String apellido = rs.getString("apellidos");
-                String nombre = rs.getString("nombres");
+                String nombres = rs.getString("nombres");
+                String apellidos = rs.getString("apellidos");
                 String email = rs.getString("email");
               
-                alumno = new Alumno(carne, apellido, nombre, email);
+                alumno = new Alumno(carne, nombres, apellidos, email);
                 listaAlumnos.add(alumno);
             }
         }catch(SQLException e){
@@ -60,17 +64,91 @@ public class AlumnoDaoImpl implements IAlumnoDao{
 
     @Override
     public Alumno encontrar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setString(1, alumno.getCarne());
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int carne = rs.getInt("carne");
+                String nombres = rs.getString("nombres");
+                String apellidos = rs.getString("apellidos");
+                String email = rs.getString("email");
+               
+
+               alumno.setNombres(nombres);
+               alumno.setApellidos(apellidos);
+               alumno.setEmail(email);
+              
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+       return alumno;
     }
 
     @Override
     public int insertar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      int rows = 0;
+        
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1,alumno.getNombres());
+            pstmt.setString(2,alumno.getApellidos());
+            pstmt.setString(3,alumno.getEmail());
+            
+           
+            
+            
+            System.out.println(pstmt.toString());
+            
+            rows = pstmt.executeUpdate();
+            
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }finally{
+          Conexion.close(pstmt);
+          Conexion.close(conn);
+        }
+        
+        return rows;
     }
 
     @Override
     public int actualizar(Alumno alumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setString(1, alumno.getNombres());
+            pstmt.setString(2, alumno.getApellidos());
+            pstmt.setString(3, alumno.getEmail());
+            pstmt.setString(6, alumno.getCarne());
+            System.out.println(pstmt.toString());
+
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
+
     }
 
     @Override
