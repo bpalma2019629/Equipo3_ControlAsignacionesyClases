@@ -3,9 +3,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="es_GT"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +18,7 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp" />
+        
         <div id="main-header" class ="py-2 bg-dark text-white text-center">
             <div class="container">
                 <div class="row">
@@ -29,50 +30,79 @@
                 </div>
             </div>
         </div>
+        
         <main>
-        <section id = "carreraTecnica">
-        <div class="container mt-5 mb-5 pb-5">
-                <div class="row">
-                    <div class="col-12 col-md-3">
-                        <div class="btn btn-success card text-center bg-success text-white mb-3">
-                            <div class="card-body btn btn-success">
-                                <i class="fas fa-plus"></i> Agregar
+            <section id = "carreraTecnica">
+                <div class="container mt-5 mb-5 pb-5">
+                    <div class="row">
+                        <div class="col-12 col-md-3">
+                            <div class="btn btn-success card text-center bg-success text-white mb-3">
+                                <div class="card-body btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4><i class="fas fa-book"></i>      Carreras Técnicas</h4>
+                        
+                        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-black text-white">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar carrera tecnica</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form method="POST" action="${pageContext.request.contextPath}/ServletCarreraTecnicaController" class ="was-validated">
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="codigoCarrera" class="form-label">Código Carrera</label>
+                                                <input type="text" class="form-control" name="codigoCarrera" id="codigoCarrera" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input type="text" class="form-control" name="nombre" id="nombre" required>
+                                            </div>
+                                            <input type="hidden" name="accion" value="insertar">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        <table class="table table-dark table-hover"">
-                            <thead class="table-dark table-hover">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>    </th>
-                                    <th>    </th>
-                                </tr>
-                            </thead>
-                            <tbody> 
-                                <c:forEach var="carreraTecnica" items="${listadoCarreraTecnica}">
+                        <div class="col-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4><i class="fas fa-book"></i>      Carreras Técnicas</h4>
+                                </div>
+                            </div>
+                            <table class="table table-dark table-hover"">
+                                <thead class="table-dark table-hover">
                                     <tr>
-                                        <td>${carreraTecnica.codigoCarrera}</td>
-                                        <td>${carreraTecnica.nombre}</td>
-                                            <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>    </th>
+                                        <th>    </th>
+                                    </tr>
+                                </thead>
+                                <tbody> 
+                                    <c:forEach var="carreraTecnica" items="${listadoCarreraTecnica}">
+                                        <tr>
+                                            <td>${carreraTecnica.codigoCarrera}</td>
+                                            <td>${carreraTecnica.nombre}</td>
+                                            <td><a class = "btn btn-warning" href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=editar&codigoCarrera=${carreraTecnica.codigoCarrera}"><i class="far fa-edit"></i>    Editar</a></td>
                                             <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=eliminar&codigoCarrera=${carreraTecnica.codigoCarrera}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
                                         </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
-    <script src="../../assets/js/jquery-3.6.0.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.js"></script>
+            </section>
+        </main>
+        <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />
+        <script src="../../assets/js/jquery-3.6.0.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.js"></script>
     </body>
 </html>
