@@ -54,6 +54,21 @@ public class AsignacionAlumno {
         this.cupoMinimo = cupoMinimo;
     }
 
+    public AsignacionAlumno(String asignacionId, Timestamp fechaAsignacion, String carne, int cursoId) {
+        this.asignacionId = asignacionId;
+        this.fechaAsignacion = fechaAsignacion;
+        this.carne = carne;
+        this.cursoId = cursoId;
+    }
+
+    public AsignacionAlumno(Timestamp fechaAsignacion, String carne, int cursoId) {
+        this.fechaAsignacion = fechaAsignacion;
+        this.carne = carne;
+        this.cursoId = cursoId;
+    }
+    
+    
+
     public String getAsignacionId() {
         return asignacionId;
     }
