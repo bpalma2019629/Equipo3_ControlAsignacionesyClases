@@ -18,7 +18,8 @@ public class Instructor {
         this.instructorId = instructorId;
     }
 
-    public Instructor(String apellidos, String nombres, String direccion, String telefono) {
+        public Instructor(String apellidos, String nombres, String direccion, String telefono) {
+
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.direccion = direccion;
