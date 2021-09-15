@@ -18,9 +18,13 @@ import java.util.List;
  */
  public class InstructorDaolmpl implements IInstructorDao {
      
-    private static final String SQL_SELECT = "SELECT instructor_id, apellidos, nombres, direccion, telefono FROM instructor";
+     
+    private static final String SQL_SELECT = "SELECT * FROM instructor";
     private static final String SQL_DELETE = "DELETE FROM instructor WHERE instructor_id = ?";
-    
+    private static final String SQL_UPDATE = "UPDATE instructor SET apellidos = ?, nombres = ?, direccion = ?, telefono = ? WHERE instructor_id = ?";
+    private static final String SQL_SELECT_BY_ID = "SELECT instructor_id, apellidos, nombres, direccion, telefono FROM instructor WHERE instructor_id = ?";
+    private static final String SQL_INSERT = "INSERT into instructor  (apellidos, nombres, direccion, telefono) values (?, ?, ?, ?)";
+
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     private ResultSet rs = null;
@@ -61,17 +65,86 @@ import java.util.List;
     
     @Override
     public Instructor encontrar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setInt(1, instructor.getInstructorId());
+            rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                int instructorId = rs.getInt("instructor_id");
+                String apellidos = rs.getString("apellidos");
+                String nombres = rs.getString("nombres");
+                String direccion = rs.getString("direccion");
+                String telefono = rs.getString("telefono");
+
+                instructor.setApellidos(apellidos);
+                instructor.setNombres(nombres);
+                instructor.setDireccion(direccion);
+                instructor.setTelefono(telefono);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return instructor;
+        
     }
 
     @Override
     public int insertar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1, instructor.getApellidos());
+            pstmt.setString(2, instructor.getNombres());
+            pstmt.setString(3, instructor.getDireccion());
+            pstmt.setString(4, instructor.getTelefono());
+
+            rows = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
+
+
     }
+
 
     @Override
     public int actualizar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setInt(1, instructor.getInstructorId());
+            pstmt.setString(2, instructor.getApellidos());
+            pstmt.setString(3, instructor.getNombres());
+            pstmt.setString(4, instructor.getDireccion());
+            pstmt.setString(5, instructor.getTelefono());
+
+
+            rows = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
     
     
