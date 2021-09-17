@@ -221,4 +221,4 @@ pass varchar(225) not null,
 nombre varchar(50),
 primary key PK_usuario(user))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO usuario(user, pass, nombre) VALUES("root", "admin", "Jorge Pérez"); -- admin
+INSERT INTO usuario(user, pass, nombre) VALUES("root", "YWRtaW4=", "Jorge Pérez"); -- admin
