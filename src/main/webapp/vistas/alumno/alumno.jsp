@@ -49,27 +49,29 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <form method="POST" action="${pageContext.request.contextPath}/ServletAlumnoController" class="was-validated">
-                                            <div class="mb-3">
-                                                <label for="carne" class="form-label">Carné:</label>
-                                                <input type="text" class="form-control" name="carne" id="carne" required>
+                                            <div class ="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="carne" class="form-label">Carné:</label>
+                                                    <input type="text" class="form-control" name="carne" id="carne" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nombres" class="form-label">Nombres:</label>
+                                                    <input type="text" class="form-control" name="nombres" id="nombres" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="apellidos" class="form-label">Apellidos:</label>
+                                                    <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Email:</label>
+                                                    <input type="email" class="form-control" name="email" id="email" required>
+                                                </div>
+                                                <input type="hidden" name="accion" value="insertar">
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><i class="fas fa-times"></i>   Cancelar</button>
+                                                    <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
+                                                </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="nombres" class="form-label">Nombres:</label>
-                                                <input type="text" class="form-control" name="nombres" id="nombres" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="apellidos" class="form-label">Apellidos:</label>
-                                                <input type="text" class="form-control" name="apellidos" id="apellidos" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="email" class="form-label">Email:</label>
-                                                <input type="email" class="form-control" name="email" id="email" required>
-                                            </div>
-                                            <input type="hidden" name="accion" value="insertar">
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><i class="fas fa-times"></i>   Cancelar</button>
-                                            <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
-                                        </div>
                                         </form>
                                     </div>
                                 </div>
