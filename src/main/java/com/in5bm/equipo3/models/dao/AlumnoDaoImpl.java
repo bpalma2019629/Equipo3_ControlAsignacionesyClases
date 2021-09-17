@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class AlumnoDaoImpl implements IAlumnoDao{
 
-    private static final String SQL_SELECT ="SELECT carne, nombres, apellidos, email  FROM alumno";
+    private static final String SQL_SELECT ="SELECT carne, apellidos, nombres, email  FROM alumno";
     private static final String SQL_DELETE="DELETE FROM alumno where carne = ?";
     private static final String SQL_SELECT_BY_ID = "SELECT  carne, nombres, apellidos, email FROM alumno WHERE carne = ? ";
-    private static final String SQL_INSERT = "INSERT INTO alumno(nombres,apellidos,email)VALUES (?, ?, ?)";
+    private static final String SQL_INSERT = "INSERT INTO alumno(carne,nombres,apellidos,email)VALUES (?,?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE alumno SET nombres = ?,apellidos = ?,email = ? WHERE carne = ?";
     
     private Connection conn = null;
@@ -43,11 +43,11 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             rs = pstmt.executeQuery();
             while(rs.next()){
                 String carne = rs.getString("carne");
-                String nombres = rs.getString("nombres");
                 String apellidos = rs.getString("apellidos");
+                String nombres = rs.getString("nombres");
                 String email = rs.getString("email");
               
-                alumno = new Alumno(carne, nombres, apellidos, email);
+                alumno = new Alumno(carne, apellidos, nombres, email);
                 listaAlumnos.add(alumno);
             }
         }catch(SQLException e){
@@ -70,12 +70,12 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             pstmt.setString(1, alumno.getCarne());
             rs = pstmt.executeQuery();
             while (rs.next()) {
-                int carne = rs.getInt("carne");
+                String carne = rs.getString("carne");
                 String nombres = rs.getString("nombres");
                 String apellidos = rs.getString("apellidos");
                 String email = rs.getString("email");
                
-
+               alumno.setCarne(carne);
                alumno.setNombres(nombres);
                alumno.setApellidos(apellidos);
                alumno.setEmail(email);
@@ -100,9 +100,10 @@ public class AlumnoDaoImpl implements IAlumnoDao{
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_INSERT);
-            pstmt.setString(1,alumno.getNombres());
-            pstmt.setString(2,alumno.getApellidos());
-            pstmt.setString(3,alumno.getEmail());
+            pstmt.setString(1, alumno.getCarne());
+            pstmt.setString(2,alumno.getNombres());
+            pstmt.setString(3,alumno.getApellidos());
+            pstmt.setString(4,alumno.getEmail());
             
            
             
@@ -133,7 +134,7 @@ public class AlumnoDaoImpl implements IAlumnoDao{
             pstmt.setString(1, alumno.getNombres());
             pstmt.setString(2, alumno.getApellidos());
             pstmt.setString(3, alumno.getEmail());
-            pstmt.setString(6, alumno.getCarne());
+            pstmt.setString(4, alumno.getCarne());
             System.out.println(pstmt.toString());
 
             rows = pstmt.executeUpdate();

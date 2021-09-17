@@ -32,27 +32,32 @@
                 </div>
             </div>
         </div>
-
-        <form method="POST" action="${pageContext.request.contextPath}/ServletCursoController" class ="container py-4 pb-4 was-validated">
+        <div class="container pb-4 py-4">
+            <h4><a  href="${pageContext.request.contextPath}/ServletCursoController?accion=listar" ><i class="fas fa-undo-alt"></i>   Regresar</a></h4>          
+        </div>
+        <div class="container modal-header bg-dark text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Curso</h5>
+        </div>
+        <form method="POST" action="${pageContext.request.contextPath}/ServletCursoController" class=" bg-white container py4 pb-4 was-validated rounded">
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="ciclo" class="form-label text-white">Ciclo</label>
+                    <label for="ciclo" class="form-label">Ciclo</label>
                     <input type="number" class="form-control" name="ciclo" id="ciclo" min="2021" step="1" required value="${curso.ciclo}">
                 </div>
                 <div class="mb-3">
-                    <label for="cupoMaximo" class="form-label text-white">Cupo Máximo</label>
+                    <label for="cupoMaximo" class="form-label">Cupo Máximo</label>
                     <input type="number" class="form-control" name="cupoMaximo" id="cupoMaximo" min="0" required value="${curso.cupoMaximo}">
                 </div>
                 <div class="mb-3">
-                    <label for="cupoMinimo" class="form-label text-white">Cupo Mínimo</label>
+                    <label for="cupoMinimo" class="form-label">Cupo Mínimo</label>
                     <input type="number" class="form-control" name="cupoMinimo" id="cupoMinimo" min="0" required value="${curso.cupoMinimo}">
                 </div>
                 <div class="mb-3">
-                    <label for="descripcion" class="form-label text-white">Descripción</label>
+                    <label for="descripcion" class="form-label">Descripción</label>
                     <input type="text" class="form-control" name="descripcion" id="descripcion" required value="${curso.descripcion}">
                 </div>
                 <div class="form-group">
-                    <label for="carreraTecnica" class="form-label text-white">Código Carrera</label>
+                    <label for="carreraTecnica" class="form-label">Código Carrera</label>
                     <select class="form-control" name="codigoCarrera" id="codigoCarrera">
                         <c:forEach var="carreraTecnica" items="${listadoCarreraTecnica}">
                             <tr>
@@ -99,9 +104,8 @@
                 <input type="hidden" name="accion" value="actualizar">
             </div>
             <div class="modal-footer">
-                
-                <button class="btn btn-secondary" href="${pageContext.request.contextPath}/ServletCursoController?accion=listar" class="btn btn-secondary"> Cancelar</button>
-                <button type="submit" class="btn btn-success">Guardar</button>
+                <a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletCursoController?accion=eliminar&cursoId=${curso.cursoId}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a>
+                <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
             </div>
         </form>
         <div><br><br><br></div>

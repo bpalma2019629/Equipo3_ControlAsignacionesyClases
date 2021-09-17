@@ -211,3 +211,14 @@ insert into asignacion_alumno(asignacion_id, fecha_asignacion, carne, curso_id)
   value('A-21', '2020-10-11 9:00:00', '2021150', 10);
   
 
+
+-- -----------------------------------------------------
+-- Tablas Login
+-- -----------------------------------------------------
+create table if not exists usuario(
+user varchar(25) not null,
+pass varchar(225) not null,
+nombre varchar(50),
+primary key PK_usuario(user))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO usuario(user, pass, nombre) VALUES("root", "admin", "Jorge Pérez"); -- admin

@@ -26,11 +26,26 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <br>
+        <div id="main-header" class ="py-2 bg-dark text-white text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>
+                            Editar Salones
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pb-4 py-4">
+            <h4><a  href="${pageContext.request.contextPath}/ServletSalonController?accion=listar" ><i class="fas fa-undo-alt"></i>   Regresar</a></h4>          
+        </div>
+        <div class="container modal-header bg-dark text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Salón</h5>
+        </div>
+        <form method="POST" action="${pageContext.request.contextPath}/ServletSalonController" class=" bg-white container py4 pb-4 was-validated rounded">
 
-        <form method="POST" action="${pageContext.request.contextPath}/ServletSalonController" class="was-validated">
-
-            <div class="mb-3">
+            <div class="mb-3 pt-4">
                 <label for="capacidad" class="form-label">Cantidad máxima de alumnos</label>
                 <input type="number" class="form-control" name="capacidad" id="capacidad" required value="${salon.capacidad}">
             </div>
@@ -48,8 +63,10 @@
             <input type="hidden" name="salonId" value="${salon.salonId}">
             <input type="hidden" name="accion" value="actualizar">
 
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <div class="modal-footer">
+                <a class="btn btn-danger" href="${pageContext.request.contextPath}/ServletSalonController?accion=eliminar&salonId=${salon.salonId}"> <i class="fas fa-trash"></i> Eliminar</a>
+                <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
+            </div>
         </form>
 
         <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp"/>

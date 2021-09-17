@@ -27,30 +27,19 @@ public class Alumno {
     public Alumno(String carne) {
         this.carne = carne;
     }
-    
 
-    public Alumno(String apellidos, String nombres) {
+    public Alumno(String apellidos, String nombres, String email) {
         this.apellidos = apellidos;
         this.nombres = nombres;
+        this.email = email;
     }
+    
 
     public Alumno(String carne, String apellidos, String nombres, String email) {
         this.carne = carne;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.email = email;
-    }
-
-    public Alumno(String nombre, String apellido, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Alumno(int carne) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Alumno(int carne, String nombre, String apellido, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getCarne() {

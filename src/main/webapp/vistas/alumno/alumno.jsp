@@ -34,44 +34,77 @@
                 <div class="container mt-5 mb-5 pb-5">
                     <div class="row">
                         <section id = "carne">
-                        <div class="col-12 col-md-3">
-                            <div class="btn btn-success card text-center bg-success text-white mb-3">
-                                <div class="card-body btn btn-success">
-                                    <i class="fas fa-plus"></i> Agregar
+                            <div class="col-12 col-md-3">
+                                <div class="btn btn-success card text-center bg-success text-white mb-3">
+                                    <div class="card-body btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                                        <i class="fas fa-plus"></i> Agregar
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4><i class="fas fa-user-graduate"></i>        Alumnos</h4>
+                            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-dark text-white">
+                                            <h5 class="modal-title" id="exampleModalLabel">Agregar Alumno</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <form method="POST" action="${pageContext.request.contextPath}/ServletAlumnoController" class="was-validated">
+                                            <div class="mb-3">
+                                                <label for="carne" class="form-label">Carné:</label>
+                                                <input type="text" class="form-control" name="carne" id="carne" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="nombres" class="form-label">Nombres:</label>
+                                                <input type="text" class="form-control" name="nombres" id="nombres" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="apellidos" class="form-label">Apellidos:</label>
+                                                <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email:</label>
+                                                <input type="email" class="form-control" name="email" id="email" required>
+                                            </div>
+                                            <input type="hidden" name="accion" value="insertar">
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><i class="fas fa-times"></i>   Cancelar</button>
+                                            <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
+                                        </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            <table class="table table-dark table-hover"">
-                                <thead class="table-dark table-hover">
-                                    <tr>
-                                        <th>carne</th>
-                                        <th>nombres</th>
-                                        <th>apellidos</th>
-                                        <th>email</th>
-                                        <th>    </th>
-                                        <th>    </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="alumno" items="${listadoAlumno}">
+                            <div class="col-12 col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4><i class="fas fa-user-graduate"></i>        Alumnos</h4>
+                                    </div>
+                                </div>
+                                <table class="table table-dark table-hover"">
+                                    <thead class="table-dark table-hover">
                                         <tr>
-                                            <td>${alumno.carne}</td>
-                                            <td>${alumno.nombres}</td>
-                                            <td>${alumno.apellidos}</td>
-                                            <td>${alumno.email}</td>
-                                            <td><a class = "btn btn-warning"  href="#"><i class="far fa-edit"></i>    Editar</a></td>
-                                            <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletAlumnoController?accion=eliminar&carne=${alumno.carne}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
+                                            <th>carne</th>
+                                            <th>nombres</th>
+                                            <th>apellidos</th>
+                                            <th>email</th>
+                                            <th>    </th>
+                                            <th>    </th>
                                         </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach var="alumno" items="${listadoAlumno}">
+                                            <tr>
+                                                <td>${alumno.carne}</td>
+                                                <td>${alumno.nombres}</td>
+                                                <td>${alumno.apellidos}</td>
+                                                <td>${alumno.email}</td>
+                                                <td><a class = "btn btn-warning"  href="${pageContext.request.contextPath}/ServletAlumnoController?accion=editar&carne=${alumno.carne}"><i class="far fa-edit"></i>    Editar</a></td>
+                                                <td><a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletAlumnoController?accion=eliminar&carne=${alumno.carne}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
                     </div>
                 </div>
             </section>

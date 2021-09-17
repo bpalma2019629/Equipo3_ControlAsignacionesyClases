@@ -53,7 +53,7 @@ public class ServletAlumnoController extends HttpServlet {
 
     private void editarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        int carne = Integer.parseInt(request.getParameter("carne"));
+        String carne = request.getParameter("carne");
 
         Alumno alumno = new AlumnoDaoImpl().encontrar(new Alumno(carne));
 
@@ -99,11 +99,12 @@ public class ServletAlumnoController extends HttpServlet {
     }
 
     private void insertarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String nombre = request.getParameter("nombres");
-        String apellido = request.getParameter("apellidos");
+        String carne = request.getParameter("carne");
+        String nombres = request.getParameter("nombres");
+        String apellidos = request.getParameter("apellidos");
         String email = request.getParameter("email");
 
-        Alumno alumno = new Alumno(nombre, apellido, email);
+        Alumno alumno = new Alumno(carne, apellidos, nombres, email);
         System.out.println(alumno);
 
         int registrosInsertados = new AlumnoDaoImpl().insertar(alumno);
@@ -115,12 +116,12 @@ public class ServletAlumnoController extends HttpServlet {
 
     private void actualizarAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        int carne = Integer.parseInt(request.getParameter("carne"));
-        String nombre = request.getParameter("nombres");
-        String apellido = request.getParameter("apellidos");
+        String carne =request.getParameter("carne");
+        String nombres = request.getParameter("nombres");
+        String apellidos = request.getParameter("apellidos");
         String email = request.getParameter("email");
 
-        Alumno alumno = new Alumno(carne, nombre, apellido, email);
+        Alumno alumno = new Alumno(carne, apellidos, nombres, email);
 
         int registrosActualizados = new AlumnoDaoImpl().actualizar(alumno);
 

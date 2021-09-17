@@ -28,17 +28,22 @@
                 </div>
             </div>
         </div>
-        <form method="POST" action="${pageContext.request.contextPath}/ServletCarreraTecnicaController" class ="container py-4 pb-4 was-validated">
-            <div class="mb-3">
-                <label for="nombre"  class="form-label text-white"> Nombre</label>
+        <div class="container pb-4 py-4">
+            <h4><a  href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar" ><i class="fas fa-undo-alt"></i>   Regresar</a></h4>          
+        </div>
+        <div class="container modal-header bg-dark text-white">
+            <h5 class="modal-title" id="exampleModalLabel">Carrera Técnica</h5>
+        </div>
+        <form method="POST" action="${pageContext.request.contextPath}/ServletCarreraTecnicaController" class=" bg-white container py4 pb-4 was-validated rounded">
+            <div class="mb-3 pt-4">
+                <label for="nombre"  class="form-label"> Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" required value="${carreraTecnica.nombre}">
             </div>
             <input type="hidden" name="codigoCarrera" value="${carreraTecnica.codigoCarrera}">
             <input type="hidden" name="accion" value="actualizar">
             <div class="modal-footer">
-
-                <button class="btn btn-secondary" href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=listar" class="btn btn-secondary"> Cancelar</button>
-                <button type="submit" class="btn btn-success">Guardar</button>
+                <a class = "btn btn-danger"  href="${pageContext.request.contextPath}/ServletCarreraTecnicaController?accion=eliminar&codigoCarrera=${carreraTecnica.codigoCarrera}" id="deleteBtn" type="button"><i class="fas fa-trash"></i>    Eliminar</a>
+                <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
             </div>
         </form>
         <jsp:include page="/WEB-INF/paginas/comunes/footer.jsp" />

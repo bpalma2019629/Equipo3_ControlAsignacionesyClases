@@ -43,8 +43,8 @@
                         <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header bg-black text-white">
-                                        <h5 class="modal-title" id="exampleModalLabel">Agregar nueva asignación</h5>
+                                    <div class="modal-header bg-dark text-white">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar Asignación</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <form method="POST" action="${pageContext.request.contextPath}/ServletAsignacionAlumnoController" class ="was-validated">
@@ -64,7 +64,6 @@
                                             <div class="mb-3">
                                                 <label for="curso" class="form-label">Curso</label>
                                                 <select class="form-select" name="cursoId" id="curso" required>
-                                                    <option selected>Curso</option>
                                                     <c:forEach var="curso" items="${listadoCursos}">
                                                         <option value="${curso.cursoId}">${curso.cursoId} | ${curso.ciclo} | ${curso.cupoMaximo} | ${curso.cupoMinimo} | ${curso.descripcion}</option>
                                                     </c:forEach>
@@ -73,8 +72,8 @@
                                             <input type="hidden" name="accion" value="insertar">
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
-                                            <button type="submit" class="btn btn-success">Guardar</button>
+                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><i class="fas fa-times"></i>   Cancelar</button>
+                                            <button type="submit" class="btn btn-success"><i class="far fa-save"></i>   Guardar</button>
                                         </div>
                                     </form>
                                 </div>

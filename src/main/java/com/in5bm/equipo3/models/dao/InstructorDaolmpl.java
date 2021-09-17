@@ -128,11 +128,11 @@ import java.util.List;
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_UPDATE);
-            pstmt.setInt(1, instructor.getInstructorId());
-            pstmt.setString(2, instructor.getApellidos());
-            pstmt.setString(3, instructor.getNombres());
-            pstmt.setString(4, instructor.getDireccion());
-            pstmt.setString(5, instructor.getTelefono());
+            pstmt.setString(1, instructor.getApellidos());
+            pstmt.setString(2, instructor.getNombres());
+            pstmt.setString(3, instructor.getDireccion());
+            pstmt.setString(4, instructor.getTelefono());
+            pstmt.setInt(5, instructor.getInstructorId());
 
 
             rows = pstmt.executeUpdate();
